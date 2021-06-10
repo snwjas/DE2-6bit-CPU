@@ -1,0 +1,11 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="CPU_6bit">
+		<CBX_INST_ENTRY INSTANCE_NAME="|CPU_6bit|ALU:inst5|lpm_mux:Mux1" CBX_FILE_NAME="mux_3nc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CPU_6bit|ALU:inst5|lpm_mux:Mux3" CBX_FILE_NAME="mux_3nc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CPU_6bit|ALU:inst5|lpm_mux:Mux5" CBX_FILE_NAME="mux_3nc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CPU_6bit|ALU:inst5|lpm_mux:Mux0" CBX_FILE_NAME="mux_3nc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CPU_6bit|ALU:inst5|lpm_mux:Mux2" CBX_FILE_NAME="mux_3nc.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|CPU_6bit|ALU:inst5|lpm_mux:Mux4" CBX_FILE_NAME="mux_3nc.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

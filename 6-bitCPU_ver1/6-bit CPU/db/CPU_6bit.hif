@@ -1,0 +1,839 @@
+Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+11
+1000
+OFF
+OFF
+OFF
+ON
+ON
+ON
+FV_OFF
+Level2
+0
+0
+VRSM_ON
+VHSM_ON
+0
+-- Start Library Paths --
+-- End Library Paths --
+-- Start VHDL Libraries --
+-- End VHDL Libraries --
+# entity
+lpm_latch
+# storage
+db|CPU_6bit.(3).cnf
+db|CPU_6bit.(3).cnf
+# case_insensitive
+# source_file
+c:|altera|90sp2|quartus|libraries|megafunctions|lpm_latch.tdf
+8f66b58db6d02432a43ad59fc9937be0
+7
+# user_parameter {
+LPM_WIDTH
+3
+PARAMETER_SIGNED_DEC
+USR
+LPM_AVALUE
+UNUSED
+PARAMETER_UNKNOWN
+DEF
+}
+# used_port {
+q2
+-1
+3
+q1
+-1
+3
+q0
+-1
+3
+gate
+-1
+3
+data2
+-1
+3
+data1
+-1
+3
+data0
+-1
+3
+}
+# include_file {
+c:|altera|90sp2|quartus|libraries|megafunctions|lpm_constant.inc
+dcde44eee59335c1e2fe75d574f9646
+}
+# macro_sequence
+
+# end
+# entity
+lpm_latch
+# storage
+db|CPU_6bit.(6).cnf
+db|CPU_6bit.(6).cnf
+# case_insensitive
+# source_file
+c:|altera|90sp2|quartus|libraries|megafunctions|lpm_latch.tdf
+8f66b58db6d02432a43ad59fc9937be0
+7
+# user_parameter {
+LPM_WIDTH
+6
+PARAMETER_SIGNED_DEC
+USR
+LPM_AVALUE
+UNUSED
+PARAMETER_UNKNOWN
+DEF
+}
+# used_port {
+q5
+-1
+3
+q4
+-1
+3
+q3
+-1
+3
+q2
+-1
+3
+q1
+-1
+3
+q0
+-1
+3
+gate
+-1
+3
+data5
+-1
+3
+data4
+-1
+3
+data3
+-1
+3
+data2
+-1
+3
+data1
+-1
+3
+data0
+-1
+3
+}
+# include_file {
+c:|altera|90sp2|quartus|libraries|megafunctions|lpm_constant.inc
+dcde44eee59335c1e2fe75d574f9646
+}
+# macro_sequence
+
+# end
+# entity
+lpm_latch
+# storage
+db|CPU_6bit.(9).cnf
+db|CPU_6bit.(9).cnf
+# case_insensitive
+# source_file
+c:|altera|90sp2|quartus|libraries|megafunctions|lpm_latch.tdf
+8f66b58db6d02432a43ad59fc9937be0
+7
+# user_parameter {
+LPM_WIDTH
+4
+PARAMETER_SIGNED_DEC
+USR
+LPM_AVALUE
+UNUSED
+PARAMETER_UNKNOWN
+DEF
+}
+# used_port {
+q3
+-1
+3
+q2
+-1
+3
+q1
+-1
+3
+q0
+-1
+3
+gate
+-1
+3
+data3
+-1
+3
+data2
+-1
+3
+data1
+-1
+3
+data0
+-1
+3
+}
+# include_file {
+c:|altera|90sp2|quartus|libraries|megafunctions|lpm_constant.inc
+dcde44eee59335c1e2fe75d574f9646
+}
+# macro_sequence
+
+# end
+# entity
+lpm_latch
+# storage
+db|CPU_6bit.(11).cnf
+db|CPU_6bit.(11).cnf
+# case_insensitive
+# source_file
+c:|altera|90sp2|quartus|libraries|megafunctions|lpm_latch.tdf
+8f66b58db6d02432a43ad59fc9937be0
+7
+# user_parameter {
+LPM_WIDTH
+2
+PARAMETER_SIGNED_DEC
+USR
+LPM_AVALUE
+UNUSED
+PARAMETER_UNKNOWN
+DEF
+}
+# used_port {
+q1
+-1
+3
+q0
+-1
+3
+gate
+-1
+3
+data1
+-1
+3
+data0
+-1
+3
+}
+# include_file {
+c:|altera|90sp2|quartus|libraries|megafunctions|lpm_constant.inc
+dcde44eee59335c1e2fe75d574f9646
+}
+# macro_sequence
+
+# end
+# entity
+bcd7seg
+# storage
+db|CPU_6bit.(12).cnf
+db|CPU_6bit.(12).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+bcd7seg.vhd
+7171905e5de66366d6c6ffc3afd5f0e4
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(bcd)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(hexh)
+6 downto 0
+PARAMETER_STRING
+USR
+ constraint(hexl)
+6 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+bcd7seg:char7seg_A
+bcd7seg:char7seg_B
+bcd7seg:char7seg_Y
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+ov7seg
+# storage
+db|CPU_6bit.(13).cnf
+db|CPU_6bit.(13).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+ov7seg.vhd
+36c082f557ac6be2f0bc842135d3771
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(ov)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(hex)
+6 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+ov7seg:char7seg_V
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+lpm_latch
+# storage
+db|CPU_6bit.(7).cnf
+db|CPU_6bit.(7).cnf
+# case_insensitive
+# source_file
+c:|altera|90sp2|quartus|libraries|megafunctions|lpm_latch.tdf
+8f66b58db6d02432a43ad59fc9937be0
+7
+# user_parameter {
+LPM_WIDTH
+13
+PARAMETER_SIGNED_DEC
+USR
+LPM_AVALUE
+UNUSED
+PARAMETER_UNKNOWN
+DEF
+}
+# used_port {
+q9
+-1
+3
+q8
+-1
+3
+q7
+-1
+3
+q6
+-1
+3
+q5
+-1
+3
+q4
+-1
+3
+q3
+-1
+3
+q2
+-1
+3
+q12
+-1
+3
+q11
+-1
+3
+q10
+-1
+3
+q1
+-1
+3
+q0
+-1
+3
+gate
+-1
+3
+data9
+-1
+3
+data8
+-1
+3
+data7
+-1
+3
+data6
+-1
+3
+data5
+-1
+3
+data4
+-1
+3
+data3
+-1
+3
+data2
+-1
+3
+data12
+-1
+3
+data11
+-1
+3
+data10
+-1
+3
+data1
+-1
+3
+data0
+-1
+3
+}
+# include_file {
+c:|altera|90sp2|quartus|libraries|megafunctions|lpm_constant.inc
+dcde44eee59335c1e2fe75d574f9646
+}
+# macro_sequence
+
+# end
+# entity
+ALU
+# storage
+db|CPU_6bit.(14).cnf
+db|CPU_6bit.(14).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+ALU.vhd
+2dbe27685afdd697de3e89409fc2cb
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(s)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(a)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(b)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(y)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(v)
+1 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+ALU:Operation
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+sel_accu
+# storage
+db|CPU_6bit.(15).cnf
+db|CPU_6bit.(15).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+sel_accu.vhd
+648bbc5b5ca41dd831731755ddc3a1
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(a)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(b)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(y)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(qa)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(qb)
+5 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+sel_accu:accu
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+timing
+# storage
+db|CPU_6bit.(1).cnf
+db|CPU_6bit.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+timing.vhd
+93d0a6f9f4fb954fc170e0e448d3d871
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(clkout)
+0 to 3
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+timing:timingGenerator
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+CPU_6bit
+# storage
+db|CPU_6bit.(0).cnf
+db|CPU_6bit.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+CPU_6bit.vhd
+6cca2467dcb48d0e568defcd17579cf
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+|
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+IR
+# storage
+db|CPU_6bit.(2).cnf
+db|CPU_6bit.(2).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+IR.vhd
+a6837212f0c32372e967a2e25b9b555f
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(data)
+12 downto 0
+PARAMETER_STRING
+USR
+ constraint(q)
+12 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+IR:InstructionRegister
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+reg_A
+# storage
+db|CPU_6bit.(4).cnf
+db|CPU_6bit.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+reg_A.vhd
+e62fe7f0106c2f837aa158e74d6293c2
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(data)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(q)
+5 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+reg_A:Register_A
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+reg_B
+# storage
+db|CPU_6bit.(5).cnf
+db|CPU_6bit.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+reg_B.vhd
+f877399aa717651b1e11b6c64702347
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(data)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(q)
+5 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+reg_B:Register_B
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+DR
+# storage
+db|CPU_6bit.(8).cnf
+db|CPU_6bit.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+DR.vhd
+7ada2cfaa46ac56f6d8274b1409cd6c2
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(data)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(q)
+3 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+DR:DataRegister
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+PSW
+# storage
+db|CPU_6bit.(10).cnf
+db|CPU_6bit.(10).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+PSW.vhd
+21b595cbefa8f3cc6398ded15e47a74
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(data)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(q)
+1 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+PSW:ProgramStatusWord
+}
+# lmf
+c:|altera|90sp2|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# complete
+

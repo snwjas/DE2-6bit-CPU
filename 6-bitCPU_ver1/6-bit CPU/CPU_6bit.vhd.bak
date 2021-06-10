@@ -1,0 +1,159 @@
+-- A 6-bit CPU, included two sign bits.
+--
+-- Input :
+-- CLK : Internal clock
+-- KEY[0] : Four beat pulse generation
+-- SW[17]-SW[15] : Operation code(instruction)
+-- SW[14]-SW[10] : Operand A, SW[14] is a sign bit
+-- SW[9]-SW[5] : Operand B, SW[9] is a sign bit
+-- SW[0] : Single step or continuous
+--
+-- Output :
+-- LEDR : The switch red light
+-- LEDG[3]-LEDG[0] : IF ID EX WB
+-- HEX7, HEX6 : Show the operand A
+-- HEX5, HEX4 : Show the operand A
+-- HEX3, HEX2, HEX1 : Show the operation result, HEX3 is the overflow
+-- HEX0 : Close it 
+
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY CPU_6bit IS
+    PORT (CLOCK_27 : IN STD_LOGIC;
+    	  KEY : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+    	  SW : IN STD_LOGIC_VECTOR(17 DOWNTO 0);
+		  LEDR : OUT STD_LOGIC_VECTOR(17 DOWNTO 0);
+		  LEDG : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+		  HEX7, HEX6, HEX5, HEX4 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+		  HEX3, HEX2, HEX1, HEX0 : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+	);
+END CPU_6bit;
+
+ARCHITECTURE cpu OF CPU_6bit IS
+	COMPONENT timing
+	    PORT (CLK : IN STD_LOGIC;
+	    	  GEN : IN STD_LOGIC;
+			  CLKOUT : OUT STD_LOGIC_VECTOR(0 TO 3)
+		);
+	END COMPONENT;
+
+	COMPONENT ALU
+		PORT (CLK : IN STD_LOGIC;
+			  S : IN STD_LOGIC_VECTOR(2 DOWNTO 0);
+			  A : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+			  B : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+			  Y : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+			  V : OUT STD_LOGIC_VECTOR(1 DOWNTO 0)
+		);
+	END COMPONENT;
+
+	COMPONENT reg_A
+		PORT(
+			DATA : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+			CLK : IN STD_LOGIC;
+			Q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0)
+		);
+	END COMPONENT;
+
+	COMPONENT reg_B
+		PORT(
+			DATA : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+			CLK : IN STD_LOGIC;
+			Q : OUT STD_LOGIC_VECTOR(5 DOWNTO 0)
+		);
+	END COMPONENT;
+
+	COMPONENT IR
+		PORT(
+			DATA : IN STD_LOGIC_VECTOR(12 DOWNTO 0);
+			CLK : IN STD_LOGIC;
+			Q : OUT STD_LOGIC_VECTOR(12 DOWNTO 0)
+		);
+	END COMPONENT;
+
+	COMPONENT DR
+		PORT(
+			DATA : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+			CLK : IN STD_LOGIC;
+			Q : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+		);
+	END COMPONENT;
+
+	COMPONENT PSW
+		PORT(
+			DATA : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+			CLK : IN STD_LOGIC;
+			Q : OUT STD_LOGIC_VECTOR(1 DOWNTO 0)
+		);
+	END COMPONENT;
+
+	COMPONENT sel_accu
+		PORT(
+			A : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+			B : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+			Y : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+			S_Y : IN STD_LOGIC;
+			S_AB : IN STD_LOGIC;
+			QA : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+			QB : OUT STD_LOGIC_VECTOR(5 DOWNTO 0)	
+		);
+	END COMPONENT;
+
+	COMPONENT bcd7seg
+		PORT (BCD : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+			  HEXH : OUT STD_LOGIC_VECTOR(6 DOWNTO 0);
+			  HEXL : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+		);
+	END COMPONENT;
+
+	COMPONENT ov7seg
+		PORT (OV : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+			  HEX : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+		);
+	END COMPONENT;
+
+	SIGNAL clk0_3 : STD_LOGIC_VECTOR(0 TO 3);	
+	SIGNAL s : STD_LOGIC_VECTOR(12 DOWNTO 0);
+	SIGNAL ai : STD_LOGIC_VECTOR(5 DOWNTO 0);
+	SIGNAL bi : STD_LOGIC_VECTOR(5 DOWNTO 0);
+
+	SIGNAL a : STD_LOGIC_VECTOR(5 DOWNTO 0);
+	SIGNAL b : STD_LOGIC_VECTOR(5 DOWNTO 0);
+	SIGNAL y : STD_LOGIC_VECTOR(3 DOWNTO 0);
+	SIGNAL yy : STD_LOGIC_VECTOR(3 DOWNTO 0);
+	SIGNAL v : STD_LOGIC_VECTOR(1 DOWNTO 0);
+	SIGNAL vv : STD_LOGIC_VECTOR(1 DOWNTO 0);
+
+	BEGIN
+	LEDR <= SW;
+	HEX0 <= "1111111";
+	LEDG(7) <= '1' WHEN a(5) = '1' ELSE '0'; 
+	LEDG(6) <= '1' WHEN b(5) = '1' ELSE '0'; 
+	LEDG(3 DOWNTO 0) <= yy;
+	--clk0_3(0) <= not key(0);
+	--clk0_3(1) <= not key(0);
+	--clk0_3(2) <= not key(0);
+	--clk0_3(3) <= not key(0);
+
+	timingGenerator: timing PORT MAP (CLOCK_27, KEY(0), clk0_3);
+-- IF
+	InstructionRegister: IR PORT MAP (SW(17 DOWNTO 5), clk0_3(0), s);
+-- ID
+	Register_A: reg_A PORT MAP (ai, clk0_3(1), a);
+	Register_B: reg_B PORT MAP (bi, clk0_3(1), b);
+-- EX
+	Operation: ALU PORT MAP (clk0_3(2), s(12 DOWNTO 10), a, b, y, v);
+-- WB
+	DataRegister: DR PORT MAP (y, clk0_3(3), yy);
+	ProgramStatusWord: PSW PORT MAP (v, clk0_3(3), vv);
+-- accumulation
+	accu: sel_accu PORT MAP (s(9)& s(9 DOWNTO 5), s(4)& s(4 DOWNTO 0), vv(1)& vv(1)& yy, 
+							 SW(0), SW(1), ai, bi);
+-- char7seg show
+	char7seg_A: bcd7seg PORT MAP (a(3 DOWNTO 0), HEX7, HEX6);
+	char7seg_B: bcd7seg PORT MAP (b(3 DOWNTO 0), HEX5, HEX4);
+	char7seg_V: ov7seg PORT MAP (vv, HEX3);
+	char7seg_Y: bcd7seg PORT MAP (yy, HEX2, HEX1);
+
+END cpu;

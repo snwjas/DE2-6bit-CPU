@@ -1,0 +1,87 @@
+-- 
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+
+ENTITY GR0_3 IS
+	PORT(
+		OP : IN STD_LOGIC_VECTOR(11 DOWNTO 0);
+		CLK : IN STD_LOGIC;
+		WBDATA : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		WBEN : IN STD_LOGIC := '0';
+		QA : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		QB : OUT STD_LOGIC_VECTOR(5 DOWNTO 0)
+	);
+END GR0_3;
+
+ARCHITECTURE SYN OF GR0_3 IS
+	SIGNAL R0 : STD_LOGIC_VECTOR(5 DOWNTO 0);
+	SIGNAL R1 : STD_LOGIC_VECTOR(5 DOWNTO 0);
+	SIGNAL R2 : STD_LOGIC_VECTOR(5 DOWNTO 0);
+	SIGNAL R3 : STD_LOGIC_VECTOR(5 DOWNTO 0);
+
+	SIGNAL R : STD_LOGIC_VECTOR(5 DOWNTO 0);
+	SIGNAL s : STD_LOGIC_VECTOR(3 DOWNTO 0);
+BEGIN
+	s <= OP(11 DOWNTO 8);
+
+	PROCESS(OP, WBDATA, WBEN, CLK)
+	BEGIN
+				-- write back
+		IF WBEN = '0' THEN
+			IF CLK'EVENT AND CLK = '1' THEN
+				--LAD
+				IF s = "1000" THEN
+					IF OP(5) = '0' THEN
+						CASE OP(7 DOWNTO 6) IS
+							WHEN "00" => R0 <= OP(4)& OP(4 DOWNTO 0);
+							WHEN "01" => R1 <= OP(4)& OP(4 DOWNTO 0);
+							WHEN "10" => R2 <= OP(4)& OP(4 DOWNTO 0);
+							WHEN OTHERS => R3 <= OP(4)& OP(4 DOWNTO 0);
+						END CASE;
+					ELSE
+						CASE OP(4 DOWNTO 3) IS
+							WHEN "00" => R <= R0;
+							WHEN "01" => R <= R1;
+							WHEN "10" => R <= R2;
+							WHEN OTHERS => R <= R3;
+						END CASE;
+
+						CASE OP(7 DOWNTO 6) IS
+							WHEN "00" => R0 <= R;
+							WHEN "01" => R1 <= R;
+							WHEN "10" => R2 <= R;
+							WHEN OTHERS => R3 <= R;
+						END CASE;
+					END IF;
+
+				-- alu operation
+				ELSE
+					CASE OP(7 DOWNTO 6) IS
+						WHEN "00" => QA <= R0;
+						WHEN "01" => QA <= R1;
+						WHEN "10" => QA <= R2;
+						WHEN OTHERS => QA <= R3;
+					END CASE;
+
+					IF OP(5) = '1' THEN
+						CASE OP(4 DOWNTO 3) IS
+							WHEN "00" => QB <= R0;
+							WHEN "01" => QB <= R1;
+							WHEN "10" => QB <= R2;
+							WHEN OTHERS => QB <= R3;
+						END CASE;
+					END IF;
+				END IF;
+			END IF;
+		ELSE
+			CASE OP(7 DOWNTO 6) IS
+				WHEN "00" => R0 <= WBDATA;
+				WHEN "01" => R1 <= WBDATA;
+				WHEN "10" => R2 <= WBDATA;
+				WHEN OTHERS => R3 <= WBDATA;
+			END CASE;
+		END IF;
+	END PROCESS;
+
+END SYN;

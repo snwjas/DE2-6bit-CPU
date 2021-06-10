@@ -1,0 +1,965 @@
+Simulator report for CPU_6bit
+Sun Jun 23 22:01:33 2019
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 467 nodes    ;
+; Simulation Coverage         ;       5.35 % ;
+; Total Number of Transitions ; 344          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                      ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Option                                                                                     ; Setting    ; Default Value ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+; Simulation mode                                                                            ; Functional ; Timing        ;
+; Start time                                                                                 ; 0 ns       ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF       ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On         ; On            ;
+; Check outputs                                                                              ; Off        ; Off           ;
+; Report simulation coverage                                                                 ; On         ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On         ; On            ;
+; Display missing 1-value coverage report                                                    ; On         ; On            ;
+; Display missing 0-value coverage report                                                    ; On         ; On            ;
+; Detect setup and hold time violations                                                      ; Off        ; Off           ;
+; Detect glitches                                                                            ; Off        ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off        ; Off           ;
+; Generate Signal Activity File                                                              ; Off        ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off        ; Off           ;
+; Group bus channels in simulation results                                                   ; Off        ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On         ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off        ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off        ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto       ; Auto          ;
++--------------------------------------------------------------------------------------------+------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;       5.35 % ;
+; Total nodes checked                                 ; 467          ;
+; Total output ports checked                          ; 467          ;
+; Total output ports with complete 1/0-value coverage ; 25           ;
+; Total output ports with no 1/0-value coverage       ; 337          ;
+; Total output ports with no 1-value coverage         ; 368          ;
+; Total output ports with no 0-value coverage         ; 411          ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                              ;
++-----------------------------------+-----------------------------------+------------------+
+; Node Name                         ; Output Port Name                  ; Output Port Type ;
++-----------------------------------+-----------------------------------+------------------+
+; |CPU_6bit|CLOCK                   ; |CPU_6bit|CLOCK                   ; out              ;
+; |CPU_6bit|GENCLK                  ; |CPU_6bit|GENCLK                  ; out              ;
+; |CPU_6bit|INS[14]                 ; |CPU_6bit|INS[14]                 ; out              ;
+; |CPU_6bit|INS[12]                 ; |CPU_6bit|INS[12]                 ; out              ;
+; |CPU_6bit|INS[11]                 ; |CPU_6bit|INS[11]                 ; out              ;
+; |CPU_6bit|INS[9]                  ; |CPU_6bit|INS[9]                  ; out              ;
+; |CPU_6bit|INS[8]                  ; |CPU_6bit|INS[8]                  ; out              ;
+; |CPU_6bit|INS[6]                  ; |CPU_6bit|INS[6]                  ; out              ;
+; |CPU_6bit|INS[5]                  ; |CPU_6bit|INS[5]                  ; out              ;
+; |CPU_6bit|timing:inst|countsec~0  ; |CPU_6bit|timing:inst|countsec~0  ; out              ;
+; |CPU_6bit|timing:inst|countsec~1  ; |CPU_6bit|timing:inst|countsec~1  ; out              ;
+; |CPU_6bit|timing:inst|countsec~2  ; |CPU_6bit|timing:inst|countsec~2  ; out              ;
+; |CPU_6bit|timing:inst|countsec~3  ; |CPU_6bit|timing:inst|countsec~3  ; out              ;
+; |CPU_6bit|timing:inst|countsec~4  ; |CPU_6bit|timing:inst|countsec~4  ; out              ;
+; |CPU_6bit|timing:inst|countsec~5  ; |CPU_6bit|timing:inst|countsec~5  ; out              ;
+; |CPU_6bit|timing:inst|countsec[0] ; |CPU_6bit|timing:inst|countsec[0] ; regout           ;
+; |CPU_6bit|timing:inst|countsec[1] ; |CPU_6bit|timing:inst|countsec[1] ; regout           ;
+; |CPU_6bit|timing:inst|countsec[2] ; |CPU_6bit|timing:inst|countsec[2] ; regout           ;
+; |CPU_6bit|timing:inst|Add0~0      ; |CPU_6bit|timing:inst|Add0~0      ; out0             ;
+; |CPU_6bit|timing:inst|Add0~1      ; |CPU_6bit|timing:inst|Add0~1      ; out0             ;
+; |CPU_6bit|timing:inst|Add0~2      ; |CPU_6bit|timing:inst|Add0~2      ; out0             ;
+; |CPU_6bit|timing:inst|Equal0~0    ; |CPU_6bit|timing:inst|Equal0~0    ; out0             ;
+; |CPU_6bit|timing:inst|Equal1~0    ; |CPU_6bit|timing:inst|Equal1~0    ; out0             ;
+; |CPU_6bit|timing:inst|Equal2~0    ; |CPU_6bit|timing:inst|Equal2~0    ; out0             ;
+; |CPU_6bit|timing:inst|Equal3~0    ; |CPU_6bit|timing:inst|Equal3~0    ; out0             ;
++-----------------------------------+-----------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                                                                                               ;
++--------------------------------------------------------------------------+--------------------------------------------------------------------------+------------------+
+; Node Name                                                                ; Output Port Name                                                         ; Output Port Type ;
++--------------------------------------------------------------------------+--------------------------------------------------------------------------+------------------+
+; |CPU_6bit|v[1]                                                           ; |CPU_6bit|v[1]                                                           ; pin_out          ;
+; |CPU_6bit|v[0]                                                           ; |CPU_6bit|v[0]                                                           ; pin_out          ;
+; |CPU_6bit|SEL_Y                                                          ; |CPU_6bit|SEL_Y                                                          ; out              ;
+; |CPU_6bit|SEL_AB                                                         ; |CPU_6bit|SEL_AB                                                         ; out              ;
+; |CPU_6bit|INS[17]                                                        ; |CPU_6bit|INS[17]                                                        ; out              ;
+; |CPU_6bit|INS[16]                                                        ; |CPU_6bit|INS[16]                                                        ; out              ;
+; |CPU_6bit|INS[15]                                                        ; |CPU_6bit|INS[15]                                                        ; out              ;
+; |CPU_6bit|INS[13]                                                        ; |CPU_6bit|INS[13]                                                        ; out              ;
+; |CPU_6bit|INS[10]                                                        ; |CPU_6bit|INS[10]                                                        ; out              ;
+; |CPU_6bit|INS[7]                                                         ; |CPU_6bit|INS[7]                                                         ; out              ;
+; |CPU_6bit|y[3]                                                           ; |CPU_6bit|y[3]                                                           ; pin_out          ;
+; |CPU_6bit|y[2]                                                           ; |CPU_6bit|y[2]                                                           ; pin_out          ;
+; |CPU_6bit|y[1]                                                           ; |CPU_6bit|y[1]                                                           ; pin_out          ;
+; |CPU_6bit|y[0]                                                           ; |CPU_6bit|y[0]                                                           ; pin_out          ;
+; |CPU_6bit|DR:inst6|Q[0]                                                  ; |CPU_6bit|DR:inst6|Q[0]                                                  ; regout           ;
+; |CPU_6bit|DR:inst6|Q[1]                                                  ; |CPU_6bit|DR:inst6|Q[1]                                                  ; regout           ;
+; |CPU_6bit|DR:inst6|Q[2]                                                  ; |CPU_6bit|DR:inst6|Q[2]                                                  ; regout           ;
+; |CPU_6bit|DR:inst6|Q[3]                                                  ; |CPU_6bit|DR:inst6|Q[3]                                                  ; regout           ;
+; |CPU_6bit|reg_B:inst13|Q[0]                                              ; |CPU_6bit|reg_B:inst13|Q[0]                                              ; regout           ;
+; |CPU_6bit|reg_B:inst13|Q[1]                                              ; |CPU_6bit|reg_B:inst13|Q[1]                                              ; regout           ;
+; |CPU_6bit|reg_B:inst13|Q[2]                                              ; |CPU_6bit|reg_B:inst13|Q[2]                                              ; regout           ;
+; |CPU_6bit|reg_B:inst13|Q[4]                                              ; |CPU_6bit|reg_B:inst13|Q[4]                                              ; regout           ;
+; |CPU_6bit|reg_B:inst13|Q[5]                                              ; |CPU_6bit|reg_B:inst13|Q[5]                                              ; regout           ;
+; |CPU_6bit|IR:inst2|Q[0]                                                  ; |CPU_6bit|IR:inst2|Q[0]                                                  ; regout           ;
+; |CPU_6bit|IR:inst2|Q[1]                                                  ; |CPU_6bit|IR:inst2|Q[1]                                                  ; regout           ;
+; |CPU_6bit|IR:inst2|Q[2]                                                  ; |CPU_6bit|IR:inst2|Q[2]                                                  ; regout           ;
+; |CPU_6bit|IR:inst2|Q[5]                                                  ; |CPU_6bit|IR:inst2|Q[5]                                                  ; regout           ;
+; |CPU_6bit|IR:inst2|Q[8]                                                  ; |CPU_6bit|IR:inst2|Q[8]                                                  ; regout           ;
+; |CPU_6bit|IR:inst2|Q[9]                                                  ; |CPU_6bit|IR:inst2|Q[9]                                                  ; regout           ;
+; |CPU_6bit|IR:inst2|Q[10]                                                 ; |CPU_6bit|IR:inst2|Q[10]                                                 ; regout           ;
+; |CPU_6bit|IR:inst2|Q[11]                                                 ; |CPU_6bit|IR:inst2|Q[11]                                                 ; regout           ;
+; |CPU_6bit|IR:inst2|Q[12]                                                 ; |CPU_6bit|IR:inst2|Q[12]                                                 ; regout           ;
+; |CPU_6bit|sel_accu:inst1|QA~0                                            ; |CPU_6bit|sel_accu:inst1|QA~0                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA~1                                            ; |CPU_6bit|sel_accu:inst1|QA~1                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA~2                                            ; |CPU_6bit|sel_accu:inst1|QA~2                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA~3                                            ; |CPU_6bit|sel_accu:inst1|QA~3                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA~4                                            ; |CPU_6bit|sel_accu:inst1|QA~4                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA~5                                            ; |CPU_6bit|sel_accu:inst1|QA~5                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QB~3                                            ; |CPU_6bit|sel_accu:inst1|QB~3                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QB~4                                            ; |CPU_6bit|sel_accu:inst1|QB~4                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QB~5                                            ; |CPU_6bit|sel_accu:inst1|QB~5                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA[5]                                           ; |CPU_6bit|sel_accu:inst1|QA[5]                                           ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA[4]                                           ; |CPU_6bit|sel_accu:inst1|QA[4]                                           ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA[3]                                           ; |CPU_6bit|sel_accu:inst1|QA[3]                                           ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA[0]                                           ; |CPU_6bit|sel_accu:inst1|QA[0]                                           ; out              ;
+; |CPU_6bit|sel_accu:inst1|QB[2]                                           ; |CPU_6bit|sel_accu:inst1|QB[2]                                           ; out              ;
+; |CPU_6bit|sel_accu:inst1|QB[1]                                           ; |CPU_6bit|sel_accu:inst1|QB[1]                                           ; out              ;
+; |CPU_6bit|sel_accu:inst1|QB[0]                                           ; |CPU_6bit|sel_accu:inst1|QB[0]                                           ; out              ;
+; |CPU_6bit|reg_A:inst12|Q[0]                                              ; |CPU_6bit|reg_A:inst12|Q[0]                                              ; regout           ;
+; |CPU_6bit|reg_A:inst12|Q[3]                                              ; |CPU_6bit|reg_A:inst12|Q[3]                                              ; regout           ;
+; |CPU_6bit|reg_A:inst12|Q[4]                                              ; |CPU_6bit|reg_A:inst12|Q[4]                                              ; regout           ;
+; |CPU_6bit|reg_A:inst12|Q[5]                                              ; |CPU_6bit|reg_A:inst12|Q[5]                                              ; regout           ;
+; |CPU_6bit|ALU:inst5|Yout[1]                                              ; |CPU_6bit|ALU:inst5|Yout[1]                                              ; regout           ;
+; |CPU_6bit|ALU:inst5|Yout[0]                                              ; |CPU_6bit|ALU:inst5|Yout[0]                                              ; regout           ;
+; |CPU_6bit|ALU:inst5|AAin[3]                                              ; |CPU_6bit|ALU:inst5|AAin[3]                                              ; out              ;
+; |CPU_6bit|ALU:inst5|BAin[2]                                              ; |CPU_6bit|ALU:inst5|BAin[2]                                              ; out              ;
+; |CPU_6bit|ALU:inst5|BAin[1]                                              ; |CPU_6bit|ALU:inst5|BAin[1]                                              ; out              ;
+; |CPU_6bit|ALU:inst5|Yout~0                                               ; |CPU_6bit|ALU:inst5|Yout~0                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~1                                               ; |CPU_6bit|ALU:inst5|Yout~1                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~2                                               ; |CPU_6bit|ALU:inst5|Yout~2                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~3                                               ; |CPU_6bit|ALU:inst5|Yout~3                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~4                                               ; |CPU_6bit|ALU:inst5|Yout~4                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~8                                               ; |CPU_6bit|ALU:inst5|Yout~8                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~9                                               ; |CPU_6bit|ALU:inst5|Yout~9                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~10                                              ; |CPU_6bit|ALU:inst5|Yout~10                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~11                                              ; |CPU_6bit|ALU:inst5|Yout~11                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~12                                              ; |CPU_6bit|ALU:inst5|Yout~12                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~16                                              ; |CPU_6bit|ALU:inst5|Yout~16                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Y[3]                                                 ; |CPU_6bit|ALU:inst5|Y[3]                                                 ; out              ;
+; |CPU_6bit|ALU:inst5|Y[2]                                                 ; |CPU_6bit|ALU:inst5|Y[2]                                                 ; out              ;
+; |CPU_6bit|ALU:inst5|Y[1]                                                 ; |CPU_6bit|ALU:inst5|Y[1]                                                 ; out              ;
+; |CPU_6bit|ALU:inst5|Yout[2]                                              ; |CPU_6bit|ALU:inst5|Yout[2]                                              ; regout           ;
+; |CPU_6bit|ALU:inst5|Yout[3]                                              ; |CPU_6bit|ALU:inst5|Yout[3]                                              ; regout           ;
+; |CPU_6bit|ALU:inst5|Yout[4]                                              ; |CPU_6bit|ALU:inst5|Yout[4]                                              ; regout           ;
+; |CPU_6bit|ALU:inst5|Yout[5]                                              ; |CPU_6bit|ALU:inst5|Yout[5]                                              ; regout           ;
+; |CPU_6bit|PSW:inst7|Q[0]                                                 ; |CPU_6bit|PSW:inst7|Q[0]                                                 ; regout           ;
+; |CPU_6bit|PSW:inst7|Q[1]                                                 ; |CPU_6bit|PSW:inst7|Q[1]                                                 ; regout           ;
+; |CPU_6bit|ALU:inst5|Add0~1                                               ; |CPU_6bit|ALU:inst5|Add0~1                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add0~2                                               ; |CPU_6bit|ALU:inst5|Add0~2                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add0~3                                               ; |CPU_6bit|ALU:inst5|Add0~3                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add1~0                                               ; |CPU_6bit|ALU:inst5|Add1~0                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add1~1                                               ; |CPU_6bit|ALU:inst5|Add1~1                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add1~2                                               ; |CPU_6bit|ALU:inst5|Add1~2                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add1~3                                               ; |CPU_6bit|ALU:inst5|Add1~3                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~0                                               ; |CPU_6bit|ALU:inst5|Add2~0                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~1                                               ; |CPU_6bit|ALU:inst5|Add2~1                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~3                                               ; |CPU_6bit|ALU:inst5|Add2~3                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~4                                               ; |CPU_6bit|ALU:inst5|Add2~4                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~5                                               ; |CPU_6bit|ALU:inst5|Add2~5                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~6                                               ; |CPU_6bit|ALU:inst5|Add2~6                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~8                                               ; |CPU_6bit|ALU:inst5|Add2~8                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~9                                               ; |CPU_6bit|ALU:inst5|Add2~9                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~10                                              ; |CPU_6bit|ALU:inst5|Add2~10                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~11                                              ; |CPU_6bit|ALU:inst5|Add2~11                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~13                                              ; |CPU_6bit|ALU:inst5|Add2~13                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~14                                              ; |CPU_6bit|ALU:inst5|Add2~14                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~15                                              ; |CPU_6bit|ALU:inst5|Add2~15                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~16                                              ; |CPU_6bit|ALU:inst5|Add2~16                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~17                                              ; |CPU_6bit|ALU:inst5|Add2~17                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~18                                              ; |CPU_6bit|ALU:inst5|Add2~18                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~19                                              ; |CPU_6bit|ALU:inst5|Add2~19                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~20                                              ; |CPU_6bit|ALU:inst5|Add2~20                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~21                                              ; |CPU_6bit|ALU:inst5|Add2~21                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~22                                              ; |CPU_6bit|ALU:inst5|Add2~22                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~0                                               ; |CPU_6bit|ALU:inst5|Add3~0                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~1                                               ; |CPU_6bit|ALU:inst5|Add3~1                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~2                                               ; |CPU_6bit|ALU:inst5|Add3~2                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~4                                               ; |CPU_6bit|ALU:inst5|Add3~4                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~7                                               ; |CPU_6bit|ALU:inst5|Add3~7                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~9                                               ; |CPU_6bit|ALU:inst5|Add3~9                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~12                                              ; |CPU_6bit|ALU:inst5|Add3~12                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~14                                              ; |CPU_6bit|ALU:inst5|Add3~14                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~15                                              ; |CPU_6bit|ALU:inst5|Add3~15                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~16                                              ; |CPU_6bit|ALU:inst5|Add3~16                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~17                                              ; |CPU_6bit|ALU:inst5|Add3~17                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~19                                              ; |CPU_6bit|ALU:inst5|Add3~19                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~20                                              ; |CPU_6bit|ALU:inst5|Add3~20                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~21                                              ; |CPU_6bit|ALU:inst5|Add3~21                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~22                                              ; |CPU_6bit|ALU:inst5|Add3~22                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add4~0                                               ; |CPU_6bit|ALU:inst5|Add4~0                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add4~1                                               ; |CPU_6bit|ALU:inst5|Add4~1                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add4~2                                               ; |CPU_6bit|ALU:inst5|Add4~2                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add4~3                                               ; |CPU_6bit|ALU:inst5|Add4~3                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add4~4                                               ; |CPU_6bit|ALU:inst5|Add4~4                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~0              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~0              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~1              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~1              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~2              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~2              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~3              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~3              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~4              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~4              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~5              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~5              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~6              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~6              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~7              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~7              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~8              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~8              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~9              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~9              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~10             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~10             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~11             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~11             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~12             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~12             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~13             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~13             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~14             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~14             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~15             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~15             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~16             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~16             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~17             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~17             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~18             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~18             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~19             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~19             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~20             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~20             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|result_node[0]~0 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|result_node[0]~0 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~21             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~21             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~22             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~22             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~23             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~23             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~24             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~24             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~25             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~25             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~26             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~26             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~27             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~27             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~28             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~28             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~29             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~29             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~30             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~30             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~31             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~31             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~32             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~32             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~33             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~33             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~34             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~34             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~35             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~35             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~36             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~36             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~37             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~37             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~38             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~38             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~39             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~39             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~40             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~40             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~41             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~41             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~42             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~42             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|result_node[0]~1 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|result_node[0]~1 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|result_node[0]   ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|result_node[0]   ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~0              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~0              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~1              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~1              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~2              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~2              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~3              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~3              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~4              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~4              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~5              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~5              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~6              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~6              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~7              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~7              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~9              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~9              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~10             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~10             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~11             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~11             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~12             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~12             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~13             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~13             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~14             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~14             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~15             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~15             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~16             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~16             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~17             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~17             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~18             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~18             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~19             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~19             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~20             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~20             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|result_node[0]~0 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|result_node[0]~0 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~21             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~21             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~22             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~22             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~23             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~23             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~25             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~25             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~27             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~27             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~28             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~28             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~30             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~30             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~31             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~31             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~32             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~32             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~34             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~34             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~36             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~36             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~37             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~37             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~39             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~39             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~40             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~40             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~0              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~0              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~1              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~1              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~2              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~2              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~3              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~3              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~4              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~4              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~5              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~5              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~6              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~6              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~7              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~7              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~9              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~9              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~10             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~10             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~11             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~11             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~12             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~12             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~13             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~13             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~14             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~14             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~15             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~15             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~16             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~16             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~17             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~17             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~18             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~18             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~19             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~19             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~20             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~20             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|result_node[0]~0 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|result_node[0]~0 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~21             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~21             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~22             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~22             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~23             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~23             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~25             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~25             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~27             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~27             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~28             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~28             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~30             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~30             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~31             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~31             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~32             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~32             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~34             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~34             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~36             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~36             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~37             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~37             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~39             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~39             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~40             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~40             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~0              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~0              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~1              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~1              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~2              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~2              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~3              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~3              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~4              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~4              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~5              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~5              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~6              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~6              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~7              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~7              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~8              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~8              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~9              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~9              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~10             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~10             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~11             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~11             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~12             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~12             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~13             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~13             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~14             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~14             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~15             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~15             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~16             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~16             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~17             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~17             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~18             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~18             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~19             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~19             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~20             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~20             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|result_node[0]~0 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|result_node[0]~0 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~21             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~21             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~22             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~22             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~23             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~23             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~25             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~25             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~27             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~27             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~28             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~28             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~30             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~30             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~31             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~31             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~32             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~32             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~34             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~34             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~36             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~36             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~37             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~37             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~39             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~39             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~40             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~40             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~0              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~0              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~1              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~1              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~2              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~2              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~3              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~3              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~4              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~4              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~5              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~5              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~6              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~6              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~7              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~7              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~8              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~8              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~9              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~9              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~10             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~10             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~11             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~11             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~12             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~12             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~13             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~13             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~14             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~14             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~15             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~15             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~16             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~16             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~17             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~17             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~18             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~18             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~19             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~19             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~20             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~20             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|result_node[0]~0 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|result_node[0]~0 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~21             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~21             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~22             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~22             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~23             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~23             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~24             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~24             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~25             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~25             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~26             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~26             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~27             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~27             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~28             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~28             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~29             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~29             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~30             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~30             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~31             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~31             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~32             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~32             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~33             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~33             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~34             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~34             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~35             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~35             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~36             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~36             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~37             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~37             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~38             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~38             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~39             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~39             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~40             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~40             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~41             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~41             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~42             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~42             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|result_node[0]~1 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|result_node[0]~1 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|result_node[0]   ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|result_node[0]   ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~0              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~0              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~1              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~1              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~2              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~2              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~3              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~3              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~4              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~4              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~5              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~5              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~6              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~6              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~7              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~7              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~8              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~8              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~9              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~9              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~10             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~10             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~11             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~11             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~12             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~12             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~13             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~13             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~14             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~14             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~15             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~15             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~16             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~16             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~17             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~17             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~18             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~18             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~19             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~19             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~20             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~20             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|result_node[0]~0 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|result_node[0]~0 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~21             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~21             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~22             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~22             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~23             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~23             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~24             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~24             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~25             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~25             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~26             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~26             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~27             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~27             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~28             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~28             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~29             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~29             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~30             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~30             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~31             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~31             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~32             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~32             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~33             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~33             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~34             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~34             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~35             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~35             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~36             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~36             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~37             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~37             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~38             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~38             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~39             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~39             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~40             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~40             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~41             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~41             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~42             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~42             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|result_node[0]~1 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|result_node[0]~1 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|result_node[0]   ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|result_node[0]   ; out0             ;
++--------------------------------------------------------------------------+--------------------------------------------------------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                                                                                               ;
++--------------------------------------------------------------------------+--------------------------------------------------------------------------+------------------+
+; Node Name                                                                ; Output Port Name                                                         ; Output Port Type ;
++--------------------------------------------------------------------------+--------------------------------------------------------------------------+------------------+
+; |CPU_6bit|v[1]                                                           ; |CPU_6bit|v[1]                                                           ; pin_out          ;
+; |CPU_6bit|v[0]                                                           ; |CPU_6bit|v[0]                                                           ; pin_out          ;
+; |CPU_6bit|SEL_Y                                                          ; |CPU_6bit|SEL_Y                                                          ; out              ;
+; |CPU_6bit|SEL_AB                                                         ; |CPU_6bit|SEL_AB                                                         ; out              ;
+; |CPU_6bit|INS[17]                                                        ; |CPU_6bit|INS[17]                                                        ; out              ;
+; |CPU_6bit|INS[16]                                                        ; |CPU_6bit|INS[16]                                                        ; out              ;
+; |CPU_6bit|INS[15]                                                        ; |CPU_6bit|INS[15]                                                        ; out              ;
+; |CPU_6bit|INS[13]                                                        ; |CPU_6bit|INS[13]                                                        ; out              ;
+; |CPU_6bit|INS[10]                                                        ; |CPU_6bit|INS[10]                                                        ; out              ;
+; |CPU_6bit|INS[7]                                                         ; |CPU_6bit|INS[7]                                                         ; out              ;
+; |CPU_6bit|y[3]                                                           ; |CPU_6bit|y[3]                                                           ; pin_out          ;
+; |CPU_6bit|y[2]                                                           ; |CPU_6bit|y[2]                                                           ; pin_out          ;
+; |CPU_6bit|y[1]                                                           ; |CPU_6bit|y[1]                                                           ; pin_out          ;
+; |CPU_6bit|y[0]                                                           ; |CPU_6bit|y[0]                                                           ; pin_out          ;
+; |CPU_6bit|DR:inst6|Q[0]                                                  ; |CPU_6bit|DR:inst6|Q[0]                                                  ; regout           ;
+; |CPU_6bit|DR:inst6|Q[1]                                                  ; |CPU_6bit|DR:inst6|Q[1]                                                  ; regout           ;
+; |CPU_6bit|DR:inst6|Q[2]                                                  ; |CPU_6bit|DR:inst6|Q[2]                                                  ; regout           ;
+; |CPU_6bit|DR:inst6|Q[3]                                                  ; |CPU_6bit|DR:inst6|Q[3]                                                  ; regout           ;
+; |CPU_6bit|reg_B:inst13|Q[0]                                              ; |CPU_6bit|reg_B:inst13|Q[0]                                              ; regout           ;
+; |CPU_6bit|reg_B:inst13|Q[1]                                              ; |CPU_6bit|reg_B:inst13|Q[1]                                              ; regout           ;
+; |CPU_6bit|reg_B:inst13|Q[2]                                              ; |CPU_6bit|reg_B:inst13|Q[2]                                              ; regout           ;
+; |CPU_6bit|reg_B:inst13|Q[3]                                              ; |CPU_6bit|reg_B:inst13|Q[3]                                              ; regout           ;
+; |CPU_6bit|reg_B:inst13|Q[4]                                              ; |CPU_6bit|reg_B:inst13|Q[4]                                              ; regout           ;
+; |CPU_6bit|reg_B:inst13|Q[5]                                              ; |CPU_6bit|reg_B:inst13|Q[5]                                              ; regout           ;
+; |CPU_6bit|IR:inst2|Q[0]                                                  ; |CPU_6bit|IR:inst2|Q[0]                                                  ; regout           ;
+; |CPU_6bit|IR:inst2|Q[1]                                                  ; |CPU_6bit|IR:inst2|Q[1]                                                  ; regout           ;
+; |CPU_6bit|IR:inst2|Q[2]                                                  ; |CPU_6bit|IR:inst2|Q[2]                                                  ; regout           ;
+; |CPU_6bit|IR:inst2|Q[3]                                                  ; |CPU_6bit|IR:inst2|Q[3]                                                  ; regout           ;
+; |CPU_6bit|IR:inst2|Q[4]                                                  ; |CPU_6bit|IR:inst2|Q[4]                                                  ; regout           ;
+; |CPU_6bit|IR:inst2|Q[5]                                                  ; |CPU_6bit|IR:inst2|Q[5]                                                  ; regout           ;
+; |CPU_6bit|IR:inst2|Q[6]                                                  ; |CPU_6bit|IR:inst2|Q[6]                                                  ; regout           ;
+; |CPU_6bit|IR:inst2|Q[7]                                                  ; |CPU_6bit|IR:inst2|Q[7]                                                  ; regout           ;
+; |CPU_6bit|IR:inst2|Q[8]                                                  ; |CPU_6bit|IR:inst2|Q[8]                                                  ; regout           ;
+; |CPU_6bit|IR:inst2|Q[9]                                                  ; |CPU_6bit|IR:inst2|Q[9]                                                  ; regout           ;
+; |CPU_6bit|IR:inst2|Q[10]                                                 ; |CPU_6bit|IR:inst2|Q[10]                                                 ; regout           ;
+; |CPU_6bit|IR:inst2|Q[11]                                                 ; |CPU_6bit|IR:inst2|Q[11]                                                 ; regout           ;
+; |CPU_6bit|IR:inst2|Q[12]                                                 ; |CPU_6bit|IR:inst2|Q[12]                                                 ; regout           ;
+; |CPU_6bit|sel_accu:inst1|QA~0                                            ; |CPU_6bit|sel_accu:inst1|QA~0                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA~1                                            ; |CPU_6bit|sel_accu:inst1|QA~1                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA~2                                            ; |CPU_6bit|sel_accu:inst1|QA~2                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA~3                                            ; |CPU_6bit|sel_accu:inst1|QA~3                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA~4                                            ; |CPU_6bit|sel_accu:inst1|QA~4                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA~5                                            ; |CPU_6bit|sel_accu:inst1|QA~5                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QB~0                                            ; |CPU_6bit|sel_accu:inst1|QB~0                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QB~1                                            ; |CPU_6bit|sel_accu:inst1|QB~1                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QB~2                                            ; |CPU_6bit|sel_accu:inst1|QB~2                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QB~3                                            ; |CPU_6bit|sel_accu:inst1|QB~3                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QB~4                                            ; |CPU_6bit|sel_accu:inst1|QB~4                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QB~5                                            ; |CPU_6bit|sel_accu:inst1|QB~5                                            ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA[5]                                           ; |CPU_6bit|sel_accu:inst1|QA[5]                                           ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA[4]                                           ; |CPU_6bit|sel_accu:inst1|QA[4]                                           ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA[3]                                           ; |CPU_6bit|sel_accu:inst1|QA[3]                                           ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA[2]                                           ; |CPU_6bit|sel_accu:inst1|QA[2]                                           ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA[1]                                           ; |CPU_6bit|sel_accu:inst1|QA[1]                                           ; out              ;
+; |CPU_6bit|sel_accu:inst1|QA[0]                                           ; |CPU_6bit|sel_accu:inst1|QA[0]                                           ; out              ;
+; |CPU_6bit|sel_accu:inst1|QB[5]                                           ; |CPU_6bit|sel_accu:inst1|QB[5]                                           ; out              ;
+; |CPU_6bit|sel_accu:inst1|QB[4]                                           ; |CPU_6bit|sel_accu:inst1|QB[4]                                           ; out              ;
+; |CPU_6bit|sel_accu:inst1|QB[3]                                           ; |CPU_6bit|sel_accu:inst1|QB[3]                                           ; out              ;
+; |CPU_6bit|sel_accu:inst1|QB[2]                                           ; |CPU_6bit|sel_accu:inst1|QB[2]                                           ; out              ;
+; |CPU_6bit|sel_accu:inst1|QB[1]                                           ; |CPU_6bit|sel_accu:inst1|QB[1]                                           ; out              ;
+; |CPU_6bit|sel_accu:inst1|QB[0]                                           ; |CPU_6bit|sel_accu:inst1|QB[0]                                           ; out              ;
+; |CPU_6bit|reg_A:inst12|Q[0]                                              ; |CPU_6bit|reg_A:inst12|Q[0]                                              ; regout           ;
+; |CPU_6bit|reg_A:inst12|Q[1]                                              ; |CPU_6bit|reg_A:inst12|Q[1]                                              ; regout           ;
+; |CPU_6bit|reg_A:inst12|Q[2]                                              ; |CPU_6bit|reg_A:inst12|Q[2]                                              ; regout           ;
+; |CPU_6bit|reg_A:inst12|Q[3]                                              ; |CPU_6bit|reg_A:inst12|Q[3]                                              ; regout           ;
+; |CPU_6bit|reg_A:inst12|Q[4]                                              ; |CPU_6bit|reg_A:inst12|Q[4]                                              ; regout           ;
+; |CPU_6bit|reg_A:inst12|Q[5]                                              ; |CPU_6bit|reg_A:inst12|Q[5]                                              ; regout           ;
+; |CPU_6bit|ALU:inst5|Yout[1]                                              ; |CPU_6bit|ALU:inst5|Yout[1]                                              ; regout           ;
+; |CPU_6bit|ALU:inst5|Yout[0]                                              ; |CPU_6bit|ALU:inst5|Yout[0]                                              ; regout           ;
+; |CPU_6bit|ALU:inst5|AAin[3]                                              ; |CPU_6bit|ALU:inst5|AAin[3]                                              ; out              ;
+; |CPU_6bit|ALU:inst5|AAin[2]                                              ; |CPU_6bit|ALU:inst5|AAin[2]                                              ; out              ;
+; |CPU_6bit|ALU:inst5|AAin[1]                                              ; |CPU_6bit|ALU:inst5|AAin[1]                                              ; out              ;
+; |CPU_6bit|ALU:inst5|BAin[3]                                              ; |CPU_6bit|ALU:inst5|BAin[3]                                              ; out              ;
+; |CPU_6bit|ALU:inst5|BAin[2]                                              ; |CPU_6bit|ALU:inst5|BAin[2]                                              ; out              ;
+; |CPU_6bit|ALU:inst5|BAin[1]                                              ; |CPU_6bit|ALU:inst5|BAin[1]                                              ; out              ;
+; |CPU_6bit|ALU:inst5|Yout~0                                               ; |CPU_6bit|ALU:inst5|Yout~0                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~1                                               ; |CPU_6bit|ALU:inst5|Yout~1                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~2                                               ; |CPU_6bit|ALU:inst5|Yout~2                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~3                                               ; |CPU_6bit|ALU:inst5|Yout~3                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~4                                               ; |CPU_6bit|ALU:inst5|Yout~4                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~5                                               ; |CPU_6bit|ALU:inst5|Yout~5                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~6                                               ; |CPU_6bit|ALU:inst5|Yout~6                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~7                                               ; |CPU_6bit|ALU:inst5|Yout~7                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~8                                               ; |CPU_6bit|ALU:inst5|Yout~8                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~9                                               ; |CPU_6bit|ALU:inst5|Yout~9                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~10                                              ; |CPU_6bit|ALU:inst5|Yout~10                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~11                                              ; |CPU_6bit|ALU:inst5|Yout~11                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~12                                              ; |CPU_6bit|ALU:inst5|Yout~12                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~13                                              ; |CPU_6bit|ALU:inst5|Yout~13                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~14                                              ; |CPU_6bit|ALU:inst5|Yout~14                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~15                                              ; |CPU_6bit|ALU:inst5|Yout~15                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~16                                              ; |CPU_6bit|ALU:inst5|Yout~16                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~17                                              ; |CPU_6bit|ALU:inst5|Yout~17                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~18                                              ; |CPU_6bit|ALU:inst5|Yout~18                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Yout~19                                              ; |CPU_6bit|ALU:inst5|Yout~19                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Y[3]                                                 ; |CPU_6bit|ALU:inst5|Y[3]                                                 ; out              ;
+; |CPU_6bit|ALU:inst5|Y[2]                                                 ; |CPU_6bit|ALU:inst5|Y[2]                                                 ; out              ;
+; |CPU_6bit|ALU:inst5|Y[1]                                                 ; |CPU_6bit|ALU:inst5|Y[1]                                                 ; out              ;
+; |CPU_6bit|ALU:inst5|Yout[2]                                              ; |CPU_6bit|ALU:inst5|Yout[2]                                              ; regout           ;
+; |CPU_6bit|ALU:inst5|Yout[3]                                              ; |CPU_6bit|ALU:inst5|Yout[3]                                              ; regout           ;
+; |CPU_6bit|ALU:inst5|Yout[4]                                              ; |CPU_6bit|ALU:inst5|Yout[4]                                              ; regout           ;
+; |CPU_6bit|ALU:inst5|Yout[5]                                              ; |CPU_6bit|ALU:inst5|Yout[5]                                              ; regout           ;
+; |CPU_6bit|PSW:inst7|Q[0]                                                 ; |CPU_6bit|PSW:inst7|Q[0]                                                 ; regout           ;
+; |CPU_6bit|PSW:inst7|Q[1]                                                 ; |CPU_6bit|PSW:inst7|Q[1]                                                 ; regout           ;
+; |CPU_6bit|ALU:inst5|Add0~0                                               ; |CPU_6bit|ALU:inst5|Add0~0                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add0~2                                               ; |CPU_6bit|ALU:inst5|Add0~2                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add0~4                                               ; |CPU_6bit|ALU:inst5|Add0~4                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add1~0                                               ; |CPU_6bit|ALU:inst5|Add1~0                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add1~1                                               ; |CPU_6bit|ALU:inst5|Add1~1                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add1~2                                               ; |CPU_6bit|ALU:inst5|Add1~2                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add1~3                                               ; |CPU_6bit|ALU:inst5|Add1~3                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add1~4                                               ; |CPU_6bit|ALU:inst5|Add1~4                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~0                                               ; |CPU_6bit|ALU:inst5|Add2~0                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~1                                               ; |CPU_6bit|ALU:inst5|Add2~1                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~2                                               ; |CPU_6bit|ALU:inst5|Add2~2                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~3                                               ; |CPU_6bit|ALU:inst5|Add2~3                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~4                                               ; |CPU_6bit|ALU:inst5|Add2~4                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~5                                               ; |CPU_6bit|ALU:inst5|Add2~5                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~6                                               ; |CPU_6bit|ALU:inst5|Add2~6                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~7                                               ; |CPU_6bit|ALU:inst5|Add2~7                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~8                                               ; |CPU_6bit|ALU:inst5|Add2~8                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~9                                               ; |CPU_6bit|ALU:inst5|Add2~9                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~10                                              ; |CPU_6bit|ALU:inst5|Add2~10                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~11                                              ; |CPU_6bit|ALU:inst5|Add2~11                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~12                                              ; |CPU_6bit|ALU:inst5|Add2~12                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~13                                              ; |CPU_6bit|ALU:inst5|Add2~13                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~14                                              ; |CPU_6bit|ALU:inst5|Add2~14                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~15                                              ; |CPU_6bit|ALU:inst5|Add2~15                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~16                                              ; |CPU_6bit|ALU:inst5|Add2~16                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~17                                              ; |CPU_6bit|ALU:inst5|Add2~17                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~18                                              ; |CPU_6bit|ALU:inst5|Add2~18                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~19                                              ; |CPU_6bit|ALU:inst5|Add2~19                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~20                                              ; |CPU_6bit|ALU:inst5|Add2~20                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~21                                              ; |CPU_6bit|ALU:inst5|Add2~21                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add2~22                                              ; |CPU_6bit|ALU:inst5|Add2~22                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~0                                               ; |CPU_6bit|ALU:inst5|Add3~0                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~1                                               ; |CPU_6bit|ALU:inst5|Add3~1                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~2                                               ; |CPU_6bit|ALU:inst5|Add3~2                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~3                                               ; |CPU_6bit|ALU:inst5|Add3~3                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~4                                               ; |CPU_6bit|ALU:inst5|Add3~4                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~5                                               ; |CPU_6bit|ALU:inst5|Add3~5                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~6                                               ; |CPU_6bit|ALU:inst5|Add3~6                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~7                                               ; |CPU_6bit|ALU:inst5|Add3~7                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~8                                               ; |CPU_6bit|ALU:inst5|Add3~8                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~9                                               ; |CPU_6bit|ALU:inst5|Add3~9                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~10                                              ; |CPU_6bit|ALU:inst5|Add3~10                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~11                                              ; |CPU_6bit|ALU:inst5|Add3~11                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~12                                              ; |CPU_6bit|ALU:inst5|Add3~12                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~13                                              ; |CPU_6bit|ALU:inst5|Add3~13                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~15                                              ; |CPU_6bit|ALU:inst5|Add3~15                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~16                                              ; |CPU_6bit|ALU:inst5|Add3~16                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~18                                              ; |CPU_6bit|ALU:inst5|Add3~18                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~20                                              ; |CPU_6bit|ALU:inst5|Add3~20                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~21                                              ; |CPU_6bit|ALU:inst5|Add3~21                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add3~23                                              ; |CPU_6bit|ALU:inst5|Add3~23                                              ; out0             ;
+; |CPU_6bit|ALU:inst5|Add4~0                                               ; |CPU_6bit|ALU:inst5|Add4~0                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add4~1                                               ; |CPU_6bit|ALU:inst5|Add4~1                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add4~2                                               ; |CPU_6bit|ALU:inst5|Add4~2                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add4~3                                               ; |CPU_6bit|ALU:inst5|Add4~3                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|Add4~4                                               ; |CPU_6bit|ALU:inst5|Add4~4                                               ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~0              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~0              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~1              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~1              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~2              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~2              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~3              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~3              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~4              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~4              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~5              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~5              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~6              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~6              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~7              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~7              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~8              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~8              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~9              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~9              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~10             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~10             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~11             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~11             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~12             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~12             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~13             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~13             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~14             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~14             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~15             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~15             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~16             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~16             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~17             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~17             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~18             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~18             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~19             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~19             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~20             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~20             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|result_node[0]~0 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|result_node[0]~0 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~21             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~21             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~22             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~22             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~23             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~23             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~24             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~24             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~25             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~25             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~26             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~26             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~27             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~27             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~28             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~28             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~29             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~29             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~30             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~30             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~31             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~31             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~32             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~32             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~33             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~33             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~34             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~34             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~35             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~35             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~36             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~36             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~37             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~37             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~38             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~38             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~39             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~39             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~40             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~40             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~41             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~41             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~42             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|_~42             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|result_node[0]~1 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|result_node[0]~1 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|result_node[0]   ; |CPU_6bit|ALU:inst5|lpm_mux:Mux5|mux_3nc:auto_generated|result_node[0]   ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~0              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~0              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~1              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~1              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~3              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~3              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~6              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~6              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~8              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~8              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~9              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~9              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~10             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~10             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~12             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~12             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~15             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~15             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~17             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~17             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~18             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~18             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|result_node[0]~0 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|result_node[0]~0 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~21             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~21             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~22             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~22             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~23             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~23             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~24             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~24             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~25             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~25             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~26             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~26             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~27             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~27             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~28             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~28             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~29             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~29             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~31             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~31             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~32             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~32             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~33             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~33             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~34             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~34             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~35             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~35             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~36             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~36             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~37             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~37             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~38             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~38             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~39             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~39             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~40             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~40             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~41             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~41             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~42             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|_~42             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|result_node[0]~1 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|result_node[0]~1 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|result_node[0]   ; |CPU_6bit|ALU:inst5|lpm_mux:Mux4|mux_3nc:auto_generated|result_node[0]   ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~0              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~0              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~1              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~1              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~3              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~3              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~6              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~6              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~8              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~8              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~9              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~9              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~10             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~10             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~12             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~12             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~15             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~15             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~17             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~17             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~18             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~18             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|result_node[0]~0 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|result_node[0]~0 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~21             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~21             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~22             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~22             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~23             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~23             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~24             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~24             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~25             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~25             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~26             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~26             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~27             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~27             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~28             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~28             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~29             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~29             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~31             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~31             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~32             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~32             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~33             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~33             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~34             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~34             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~35             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~35             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~36             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~36             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~37             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~37             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~38             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~38             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~39             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~39             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~40             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~40             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~41             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~41             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~42             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|_~42             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|result_node[0]~1 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|result_node[0]~1 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|result_node[0]   ; |CPU_6bit|ALU:inst5|lpm_mux:Mux3|mux_3nc:auto_generated|result_node[0]   ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~0              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~0              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~1              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~1              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~2              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~2              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~3              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~3              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~4              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~4              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~6              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~6              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~7              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~7              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~8              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~8              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~9              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~9              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~10             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~10             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~11             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~11             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~12             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~12             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~13             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~13             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~15             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~15             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~16             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~16             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~17             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~17             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~18             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~18             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~19             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~19             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~20             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~20             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|result_node[0]~0 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|result_node[0]~0 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~21             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~21             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~22             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~22             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~23             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~23             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~24             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~24             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~25             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~25             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~26             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~26             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~27             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~27             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~28             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~28             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~29             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~29             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~31             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~31             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~32             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~32             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~33             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~33             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~34             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~34             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~35             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~35             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~36             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~36             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~37             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~37             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~38             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~38             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~39             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~39             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~40             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~40             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~41             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~41             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~42             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|_~42             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|result_node[0]~1 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|result_node[0]~1 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|result_node[0]   ; |CPU_6bit|ALU:inst5|lpm_mux:Mux2|mux_3nc:auto_generated|result_node[0]   ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~0              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~0              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~1              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~1              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~2              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~2              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~3              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~3              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~4              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~4              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~5              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~5              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~6              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~6              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~7              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~7              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~8              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~8              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~9              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~9              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~10             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~10             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~11             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~11             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~12             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~12             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~13             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~13             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~14             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~14             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~15             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~15             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~16             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~16             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~17             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~17             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~18             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~18             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~19             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~19             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~20             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~20             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|result_node[0]~0 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|result_node[0]~0 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~21             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~21             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~22             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~22             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~23             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~23             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~24             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~24             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~25             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~25             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~26             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~26             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~27             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~27             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~28             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~28             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~29             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~29             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~30             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~30             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~31             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~31             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~32             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~32             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~33             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~33             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~34             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~34             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~35             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~35             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~36             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~36             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~37             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~37             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~38             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~38             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~39             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~39             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~40             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~40             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~41             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~41             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~42             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|_~42             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|result_node[0]~1 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|result_node[0]~1 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|result_node[0]   ; |CPU_6bit|ALU:inst5|lpm_mux:Mux1|mux_3nc:auto_generated|result_node[0]   ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~0              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~0              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~1              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~1              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~2              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~2              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~3              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~3              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~4              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~4              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~5              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~5              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~6              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~6              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~7              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~7              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~8              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~8              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~9              ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~9              ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~10             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~10             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~11             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~11             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~12             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~12             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~13             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~13             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~14             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~14             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~15             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~15             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~16             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~16             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~17             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~17             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~18             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~18             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~19             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~19             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~20             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~20             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|result_node[0]~0 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|result_node[0]~0 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~21             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~21             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~22             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~22             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~23             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~23             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~24             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~24             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~25             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~25             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~26             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~26             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~27             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~27             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~28             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~28             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~29             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~29             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~30             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~30             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~31             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~31             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~32             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~32             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~33             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~33             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~34             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~34             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~35             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~35             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~36             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~36             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~37             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~37             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~38             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~38             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~39             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~39             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~40             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~40             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~41             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~41             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~42             ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|_~42             ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|result_node[0]~1 ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|result_node[0]~1 ; out0             ;
+; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|result_node[0]   ; |CPU_6bit|ALU:inst5|lpm_mux:Mux0|mux_3nc:auto_generated|result_node[0]   ; out0             ;
++--------------------------------------------------------------------------+--------------------------------------------------------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Sun Jun 23 22:01:32 2019
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off CPU_6bit -c CPU_6bit
+Info: Using vector source file "D:/Programming/VHDL/6-bitCPU_ver1/6-bit CPU BSF/CPU_6bit.vwf"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Warning: Found clock-sensitive change during active clock edge at time 30.0 ns on register "|CPU_6bit|timing:inst|countsec[2]"
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is       5.35 %
+Info: Number of transitions in simulation is 344
+Info: Quartus II Simulator was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 171 megabytes
+    Info: Processing ended: Sun Jun 23 22:01:33 2019
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+

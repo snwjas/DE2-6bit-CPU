@@ -1,0 +1,925 @@
+Classic Timing Analyzer report for CPU_6bit
+Sat Jun 22 20:49:25 2019
+Quartus II Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'KEY[1]'
+  7. Clock Setup: 'KEY[3]'
+  8. tsu
+  9. tco
+ 10. tpd
+ 11. th
+ 12. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                                                                                                                                                          ;
++------------------------------+-------+---------------+------------------------------------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                                    ; From                                                                                                    ; To                                                                                                      ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+------------------------------------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 7.390 ns                                       ; KEY[3]                                                                                                  ; GR0_3:GeneralRegister0_3|QA[4]                                                                          ; --         ; KEY[3]   ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 11.677 ns                                      ; GR0_3:GeneralRegister0_3|QA[0]                                                                          ; HEX6[1]                                                                                                 ; KEY[3]     ; --       ; 0            ;
+; Worst-case tpd               ; N/A   ; None          ; 9.855 ns                                       ; SW[15]                                                                                                  ; LEDR[15]                                                                                                ; --         ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 0.037 ns                                       ; SW[6]                                                                                                   ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg0  ; --         ; KEY[1]   ; 0            ;
+; Clock Setup: 'KEY[3]'        ; N/A   ; None          ; 131.44 MHz ( period = 7.608 ns )               ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R3[5]~latch                                                                    ; KEY[3]     ; KEY[3]   ; 0            ;
+; Clock Setup: 'KEY[1]'        ; N/A   ; None          ; Restricted to 210.08 MHz ( period = 4.760 ns ) ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg11 ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a11~porta_memory_reg0 ; KEY[1]     ; KEY[1]   ; 0            ;
+; Total number of failed paths ;       ;               ;                                                ;                                                                                                         ;                                                                                                         ;            ;          ; 0            ;
++------------------------------+-------+---------------+------------------------------------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EP2C35F672C6       ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                   ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                   ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; KEY[1]          ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
+; KEY[3]          ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'KEY[1]'                                                                                                                                                                                                                                                                                                                                                                  ;
++-------+------------------------------------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack ; Actual fmax (period)                           ; From                                                                                                    ; To                                                                                                      ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-------+------------------------------------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A   ; Restricted to 210.08 MHz ( period = 4.760 ns ) ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg0  ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_memory_reg0  ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.645 ns                ;
+; N/A   ; Restricted to 210.08 MHz ( period = 4.760 ns ) ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg1  ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a1~porta_memory_reg0  ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.645 ns                ;
+; N/A   ; Restricted to 210.08 MHz ( period = 4.760 ns ) ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg2  ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a2~porta_memory_reg0  ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.645 ns                ;
+; N/A   ; Restricted to 210.08 MHz ( period = 4.760 ns ) ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg3  ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a3~porta_memory_reg0  ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.645 ns                ;
+; N/A   ; Restricted to 210.08 MHz ( period = 4.760 ns ) ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg4  ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a4~porta_memory_reg0  ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.645 ns                ;
+; N/A   ; Restricted to 210.08 MHz ( period = 4.760 ns ) ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg5  ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a5~porta_memory_reg0  ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.645 ns                ;
+; N/A   ; Restricted to 210.08 MHz ( period = 4.760 ns ) ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg6  ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a6~porta_memory_reg0  ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.645 ns                ;
+; N/A   ; Restricted to 210.08 MHz ( period = 4.760 ns ) ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg7  ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a7~porta_memory_reg0  ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.645 ns                ;
+; N/A   ; Restricted to 210.08 MHz ( period = 4.760 ns ) ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg8  ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a8~porta_memory_reg0  ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.645 ns                ;
+; N/A   ; Restricted to 210.08 MHz ( period = 4.760 ns ) ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg9  ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a9~porta_memory_reg0  ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.645 ns                ;
+; N/A   ; Restricted to 210.08 MHz ( period = 4.760 ns ) ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg10 ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a10~porta_memory_reg0 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.645 ns                ;
+; N/A   ; Restricted to 210.08 MHz ( period = 4.760 ns ) ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg11 ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a11~porta_memory_reg0 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.645 ns                ;
+; N/A   ; 373.69 MHz ( period = 2.676 ns )               ; IIC:InstructionInputController|count[0]                                                                 ; IIC:InstructionInputController|count[3]                                                                 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.462 ns                ;
+; N/A   ; 376.36 MHz ( period = 2.657 ns )               ; IIC:InstructionInputController|count[3]                                                                 ; IIC:InstructionInputController|count[3]                                                                 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.443 ns                ;
+; N/A   ; 383.58 MHz ( period = 2.607 ns )               ; IIC:InstructionInputController|count[0]                                                                 ; IIC:InstructionInputController|count[2]                                                                 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.393 ns                ;
+; N/A   ; 386.40 MHz ( period = 2.588 ns )               ; IIC:InstructionInputController|count[3]                                                                 ; IIC:InstructionInputController|count[2]                                                                 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.374 ns                ;
+; N/A   ; 394.48 MHz ( period = 2.535 ns )               ; IIC:InstructionInputController|count[1]                                                                 ; IIC:InstructionInputController|count[3]                                                                 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.321 ns                ;
+; N/A   ; 394.79 MHz ( period = 2.533 ns )               ; IIC:InstructionInputController|count[0]                                                                 ; IIC:InstructionInputController|count[1]                                                                 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.319 ns                ;
+; N/A   ; 397.77 MHz ( period = 2.514 ns )               ; IIC:InstructionInputController|count[3]                                                                 ; IIC:InstructionInputController|count[1]                                                                 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.300 ns                ;
+; N/A   ; 403.71 MHz ( period = 2.477 ns )               ; IIC:InstructionInputController|count[0]                                                                 ; IIC:InstructionInputController|count[0]                                                                 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.263 ns                ;
+; N/A   ; 405.52 MHz ( period = 2.466 ns )               ; IIC:InstructionInputController|count[1]                                                                 ; IIC:InstructionInputController|count[2]                                                                 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.252 ns                ;
+; N/A   ; 406.83 MHz ( period = 2.458 ns )               ; IIC:InstructionInputController|count[3]                                                                 ; IIC:InstructionInputController|count[0]                                                                 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.244 ns                ;
+; N/A   ; 418.06 MHz ( period = 2.392 ns )               ; IIC:InstructionInputController|count[1]                                                                 ; IIC:InstructionInputController|count[1]                                                                 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.178 ns                ;
+; N/A   ; 421.41 MHz ( period = 2.373 ns )               ; IIC:InstructionInputController|count[2]                                                                 ; IIC:InstructionInputController|count[3]                                                                 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.159 ns                ;
+; N/A   ; 428.08 MHz ( period = 2.336 ns )               ; IIC:InstructionInputController|count[1]                                                                 ; IIC:InstructionInputController|count[0]                                                                 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.122 ns                ;
+; N/A   ; 434.03 MHz ( period = 2.304 ns )               ; IIC:InstructionInputController|count[2]                                                                 ; IIC:InstructionInputController|count[2]                                                                 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.090 ns                ;
+; N/A   ; 448.43 MHz ( period = 2.230 ns )               ; IIC:InstructionInputController|count[2]                                                                 ; IIC:InstructionInputController|count[1]                                                                 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 2.016 ns                ;
+; N/A   ; Restricted to 450.05 MHz ( period = 2.222 ns ) ; IIC:InstructionInputController|count[2]                                                                 ; IIC:InstructionInputController|count[0]                                                                 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 1.960 ns                ;
+; N/A   ; Restricted to 210.08 MHz ( period = 4.760 ns ) ; IIC:InstructionInputController|count[1]                                                                 ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_address_reg1 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 0.742 ns                ;
+; N/A   ; Restricted to 210.08 MHz ( period = 4.760 ns ) ; IIC:InstructionInputController|count[0]                                                                 ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_address_reg0 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 0.733 ns                ;
+; N/A   ; Restricted to 210.08 MHz ( period = 4.760 ns ) ; IIC:InstructionInputController|count[3]                                                                 ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_address_reg3 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 0.732 ns                ;
+; N/A   ; Restricted to 210.08 MHz ( period = 4.760 ns ) ; IIC:InstructionInputController|count[2]                                                                 ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_address_reg2 ; KEY[1]     ; KEY[1]   ; None                        ; None                      ; 0.726 ns                ;
++-------+------------------------------------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'KEY[3]'                                                                                                                                                                                                                                                                                                                                                                                                         ;
++-----------------------------------------+-----------------------------------------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                                                                                    ; To                                                                                                      ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 131.44 MHz ( period = 7.608 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R3[5]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.606 ns                ;
+; N/A                                     ; 132.35 MHz ( period = 7.556 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R1[5]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.576 ns                ;
+; N/A                                     ; 133.73 MHz ( period = 7.478 ns )                    ; GR0_3:GeneralRegister0_3|R1[4]~latch                                                                    ; GR0_3:GeneralRegister0_3|QA[4]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 3.667 ns                ;
+; N/A                                     ; 133.80 MHz ( period = 7.474 ns )                    ; GR0_3:GeneralRegister0_3|R2[0]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R2[0]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.571 ns                ;
+; N/A                                     ; 139.31 MHz ( period = 7.178 ns )                    ; GR0_3:GeneralRegister0_3|R3[0]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R3[0]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.417 ns                ;
+; N/A                                     ; 139.70 MHz ( period = 7.158 ns )                    ; GR0_3:GeneralRegister0_3|R1[4]~latch                                                                    ; GR0_3:GeneralRegister0_3|QB[4]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 3.506 ns                ;
+; N/A                                     ; 139.82 MHz ( period = 7.152 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R1[4]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.434 ns                ;
+; N/A                                     ; 141.92 MHz ( period = 7.046 ns )                    ; GR0_3:GeneralRegister0_3|R0[5]~latch                                                                    ; GR0_3:GeneralRegister0_3|R[5]                                                                           ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 3.467 ns                ;
+; N/A                                     ; 142.41 MHz ( period = 7.022 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R1[0]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.318 ns                ;
+; N/A                                     ; 142.45 MHz ( period = 7.020 ns )                    ; GR0_3:GeneralRegister0_3|R2[0]~latch                                                                    ; GR0_3:GeneralRegister0_3|QB[0]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 3.498 ns                ;
+; N/A                                     ; 142.53 MHz ( period = 7.016 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R0[1]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.283 ns                ;
+; N/A                                     ; 142.61 MHz ( period = 7.012 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R3[0]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.318 ns                ;
+; N/A                                     ; 142.73 MHz ( period = 7.006 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R0[2]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.287 ns                ;
+; N/A                                     ; 142.98 MHz ( period = 6.994 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R2[2]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.341 ns                ;
+; N/A                                     ; 143.51 MHz ( period = 6.968 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R3[2]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.314 ns                ;
+; N/A                                     ; 143.72 MHz ( period = 6.958 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R3[3]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.316 ns                ;
+; N/A                                     ; 144.38 MHz ( period = 6.926 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R0[1]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.238 ns                ;
+; N/A                                     ; 144.63 MHz ( period = 6.914 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R3[3]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.294 ns                ;
+; N/A                                     ; 146.67 MHz ( period = 6.818 ns )                    ; GR0_3:GeneralRegister0_3|R0[5]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R0[5]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.328 ns                ;
+; N/A                                     ; 147.02 MHz ( period = 6.802 ns )                    ; GR0_3:GeneralRegister0_3|R2[2]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R2[2]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.277 ns                ;
+; N/A                                     ; 148.41 MHz ( period = 6.738 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R1[2]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.163 ns                ;
+; N/A                                     ; 148.99 MHz ( period = 6.712 ns )                    ; GR0_3:GeneralRegister0_3|R0[4]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R0[4]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.258 ns                ;
+; N/A                                     ; 149.21 MHz ( period = 6.702 ns )                    ; GR0_3:GeneralRegister0_3|R1[3]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R1[3]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.192 ns                ;
+; N/A                                     ; 150.24 MHz ( period = 6.656 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R3[1]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.142 ns                ;
+; N/A                                     ; 151.19 MHz ( period = 6.614 ns )                    ; GR0_3:GeneralRegister0_3|R0[2]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R0[2]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.144 ns                ;
+; N/A                                     ; 151.38 MHz ( period = 6.606 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R0[3]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.158 ns                ;
+; N/A                                     ; 152.58 MHz ( period = 6.554 ns )                    ; GR0_3:GeneralRegister0_3|R1[4]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R1[4]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.188 ns                ;
+; N/A                                     ; 154.32 MHz ( period = 6.480 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R1[1]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.100 ns                ;
+; N/A                                     ; 154.99 MHz ( period = 6.452 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R1[3]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.071 ns                ;
+; N/A                                     ; 155.57 MHz ( period = 6.428 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R2[5]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.047 ns                ;
+; N/A                                     ; 155.62 MHz ( period = 6.426 ns )                    ; GR0_3:GeneralRegister0_3|R3[3]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R3[3]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.066 ns                ;
+; N/A                                     ; 155.91 MHz ( period = 6.414 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R1[1]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.067 ns                ;
+; N/A                                     ; 156.05 MHz ( period = 6.408 ns )                    ; GR0_3:GeneralRegister0_3|R3[1]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R3[1]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.034 ns                ;
+; N/A                                     ; 156.54 MHz ( period = 6.388 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R3[4]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.024 ns                ;
+; N/A                                     ; 157.38 MHz ( period = 6.354 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R2[1]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.989 ns                ;
+; N/A                                     ; 158.08 MHz ( period = 6.326 ns )                    ; GR0_3:GeneralRegister0_3|R2[5]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R2[5]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.028 ns                ;
+; N/A                                     ; 158.08 MHz ( period = 6.326 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R2[2]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.007 ns                ;
+; N/A                                     ; 158.18 MHz ( period = 6.322 ns )                    ; GR0_3:GeneralRegister0_3|R2[1]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R2[1]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.005 ns                ;
+; N/A                                     ; 158.98 MHz ( period = 6.290 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R3[1]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.959 ns                ;
+; N/A                                     ; 159.39 MHz ( period = 6.274 ns )                    ; GR0_3:GeneralRegister0_3|R3[2]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R3[2]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.983 ns                ;
+; N/A                                     ; 159.49 MHz ( period = 6.270 ns )                    ; GR0_3:GeneralRegister0_3|R0[0]~latch                                                                    ; GR0_3:GeneralRegister0_3|QB[0]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 3.083 ns                ;
+; N/A                                     ; 159.64 MHz ( period = 6.264 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R2[1]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.944 ns                ;
+; N/A                                     ; 160.36 MHz ( period = 6.236 ns )                    ; GR0_3:GeneralRegister0_3|R0[4]~latch                                                                    ; GR0_3:GeneralRegister0_3|QB[4]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 3.067 ns                ;
+; N/A                                     ; 161.39 MHz ( period = 6.196 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R2[0]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.900 ns                ;
+; N/A                                     ; 161.71 MHz ( period = 6.184 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R3[4]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.922 ns                ;
+; N/A                                     ; 161.81 MHz ( period = 6.180 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R2[3]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.946 ns                ;
+; N/A                                     ; 162.81 MHz ( period = 6.142 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R2[3]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.927 ns                ;
+; N/A                                     ; 163.08 MHz ( period = 6.132 ns )                    ; GR0_3:GeneralRegister0_3|R0[1]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R0[1]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.894 ns                ;
+; N/A                                     ; 163.08 MHz ( period = 6.132 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R1[3]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.911 ns                ;
+; N/A                                     ; 163.83 MHz ( period = 6.104 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R3[0]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.864 ns                ;
+; N/A                                     ; 164.69 MHz ( period = 6.072 ns )                    ; PSW:ProgramStatusWord|d[1]                                                                              ; GR0_3:GeneralRegister0_3|R3[4]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.866 ns                ;
+; N/A                                     ; 164.91 MHz ( period = 6.064 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R1[0]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.839 ns                ;
+; N/A                                     ; 165.29 MHz ( period = 6.050 ns )                    ; GR0_3:GeneralRegister0_3|R1[2]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R1[2]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.872 ns                ;
+; N/A                                     ; 165.62 MHz ( period = 6.038 ns )                    ; GR0_3:GeneralRegister0_3|R0[0]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R0[0]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.913 ns                ;
+; N/A                                     ; 168.18 MHz ( period = 5.946 ns )                    ; GR0_3:GeneralRegister0_3|R1[1]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R1[1]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.886 ns                ;
+; N/A                                     ; 169.09 MHz ( period = 5.914 ns )                    ; GR0_3:GeneralRegister0_3|R2[3]~latch                                                                    ; GR0_3:GeneralRegister0_3|R[3]                                                                           ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.910 ns                ;
+; N/A                                     ; 170.01 MHz ( period = 5.882 ns )                    ; GR0_3:GeneralRegister0_3|R2[5]~latch                                                                    ; GR0_3:GeneralRegister0_3|R[5]                                                                           ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.885 ns                ;
+; N/A                                     ; 170.53 MHz ( period = 5.864 ns )                    ; GR0_3:GeneralRegister0_3|R3[5]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R3[5]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.750 ns                ;
+; N/A                                     ; 171.23 MHz ( period = 5.840 ns )                    ; GR0_3:GeneralRegister0_3|R0[5]~latch                                                                    ; GR0_3:GeneralRegister0_3|QB[5]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.880 ns                ;
+; N/A                                     ; 171.29 MHz ( period = 5.838 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R0[3]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.774 ns                ;
+; N/A                                     ; 171.56 MHz ( period = 5.829 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|QA[4]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 5.581 ns                ;
+; N/A                                     ; 171.76 MHz ( period = 5.822 ns )                    ; GR0_3:GeneralRegister0_3|R0[1]~latch                                                                    ; GR0_3:GeneralRegister0_3|QB[1]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 3.031 ns                ;
+; N/A                                     ; 173.31 MHz ( period = 5.770 ns )                    ; GR0_3:GeneralRegister0_3|R0[0]~latch                                                                    ; GR0_3:GeneralRegister0_3|QA[0]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.851 ns                ;
+; N/A                                     ; 173.55 MHz ( period = 5.762 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R0[2]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.665 ns                ;
+; N/A                                     ; 173.79 MHz ( period = 5.754 ns )                    ; GR0_3:GeneralRegister0_3|R1[1]~latch                                                                    ; GR0_3:GeneralRegister0_3|QB[1]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.838 ns                ;
+; N/A                                     ; 173.79 MHz ( period = 5.754 ns )                    ; DR:DataRegister|d[0]                                                                                    ; GR0_3:GeneralRegister0_3|R0[0]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.743 ns                ;
+; N/A                                     ; 174.76 MHz ( period = 5.722 ns )                    ; GR0_3:GeneralRegister0_3|R2[4]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R2[4]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.670 ns                ;
+; N/A                                     ; 174.83 MHz ( period = 5.720 ns )                    ; GR0_3:GeneralRegister0_3|R1[0]~latch                                                                    ; GR0_3:GeneralRegister0_3|QB[0]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.960 ns                ;
+; N/A                                     ; 175.25 MHz ( period = 5.706 ns )                    ; GR0_3:GeneralRegister0_3|R0[3]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R0[3]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.761 ns                ;
+; N/A                                     ; 176.24 MHz ( period = 5.674 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R3[2]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.667 ns                ;
+; N/A                                     ; 176.40 MHz ( period = 5.669 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|QB[4]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 5.420 ns                ;
+; N/A                                     ; 176.80 MHz ( period = 5.656 ns )                    ; GR0_3:GeneralRegister0_3|R1[4]~latch                                                                    ; GR0_3:GeneralRegister0_3|R[4]                                                                           ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.774 ns                ;
+; N/A                                     ; 177.81 MHz ( period = 5.624 ns )                    ; GR0_3:GeneralRegister0_3|R0[3]~latch                                                                    ; GR0_3:GeneralRegister0_3|R[3]                                                                           ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.763 ns                ;
+; N/A                                     ; 179.15 MHz ( period = 5.582 ns )                    ; GR0_3:GeneralRegister0_3|R3[0]~latch                                                                    ; GR0_3:GeneralRegister0_3|QB[0]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.894 ns                ;
+; N/A                                     ; 179.66 MHz ( period = 5.566 ns )                    ; GR0_3:GeneralRegister0_3|R2[3]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R2[3]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.671 ns                ;
+; N/A                                     ; 179.86 MHz ( period = 5.560 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R2[0]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.582 ns                ;
+; N/A                                     ; 182.35 MHz ( period = 5.484 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R1[2]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.536 ns                ;
+; N/A                                     ; 182.68 MHz ( period = 5.474 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R0[5]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.603 ns                ;
+; N/A                                     ; 183.28 MHz ( period = 5.456 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R3[5]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.530 ns                ;
+; N/A                                     ; 183.49 MHz ( period = 5.450 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R1[5]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.523 ns                ;
+; N/A                                     ; 184.16 MHz ( period = 5.430 ns )                    ; DR:DataRegister|d[3]                                                                                    ; GR0_3:GeneralRegister0_3|R0[3]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.595 ns                ;
+; N/A                                     ; 184.77 MHz ( period = 5.412 ns )                    ; PSW:ProgramStatusWord|d[1]                                                                              ; GR0_3:GeneralRegister0_3|R0[5]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.572 ns                ;
+; N/A                                     ; 184.91 MHz ( period = 5.408 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R2[4]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.513 ns                ;
+; N/A                                     ; 185.46 MHz ( period = 5.392 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg0 ; IR:InstructionRegister|d[10]                                                                            ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 5.155 ns                ;
+; N/A                                     ; 185.46 MHz ( period = 5.392 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg1 ; IR:InstructionRegister|d[10]                                                                            ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 5.155 ns                ;
+; N/A                                     ; 185.46 MHz ( period = 5.392 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg2 ; IR:InstructionRegister|d[10]                                                                            ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 5.155 ns                ;
+; N/A                                     ; 185.46 MHz ( period = 5.392 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg3 ; IR:InstructionRegister|d[10]                                                                            ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 5.155 ns                ;
+; N/A                                     ; 185.67 MHz ( period = 5.386 ns )                    ; DR:DataRegister|d[2]                                                                                    ; GR0_3:GeneralRegister0_3|R0[2]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.502 ns                ;
+; N/A                                     ; 186.99 MHz ( period = 5.348 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R2[4]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.483 ns                ;
+; N/A                                     ; 187.16 MHz ( period = 5.343 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|QB[0]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 5.094 ns                ;
+; N/A                                     ; 188.71 MHz ( period = 5.299 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg0 ; IR:InstructionRegister|d[11]                                                                            ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 5.062 ns                ;
+; N/A                                     ; 188.71 MHz ( period = 5.299 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg1 ; IR:InstructionRegister|d[11]                                                                            ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 5.062 ns                ;
+; N/A                                     ; 188.71 MHz ( period = 5.299 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg2 ; IR:InstructionRegister|d[11]                                                                            ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 5.062 ns                ;
+; N/A                                     ; 188.71 MHz ( period = 5.299 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg3 ; IR:InstructionRegister|d[11]                                                                            ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 5.062 ns                ;
+; N/A                                     ; 188.75 MHz ( period = 5.298 ns )                    ; DR:DataRegister|d[2]                                                                                    ; GR0_3:GeneralRegister0_3|R3[2]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.504 ns                ;
+; N/A                                     ; 189.54 MHz ( period = 5.276 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg0 ; IR:InstructionRegister|d[9]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 5.039 ns                ;
+; N/A                                     ; 189.54 MHz ( period = 5.276 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg1 ; IR:InstructionRegister|d[9]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 5.039 ns                ;
+; N/A                                     ; 189.54 MHz ( period = 5.276 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg2 ; IR:InstructionRegister|d[9]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 5.039 ns                ;
+; N/A                                     ; 189.54 MHz ( period = 5.276 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg3 ; IR:InstructionRegister|d[9]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 5.039 ns                ;
+; N/A                                     ; 189.83 MHz ( period = 5.268 ns )                    ; IR:InstructionRegister|d[8]                                                                             ; ALU:Operation|Yout[4]                                                                                   ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 5.034 ns                ;
+; N/A                                     ; 191.20 MHz ( period = 5.230 ns )                    ; GR0_3:GeneralRegister0_3|R1[5]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R1[5]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.413 ns                ;
+; N/A                                     ; 191.28 MHz ( period = 5.228 ns )                    ; GR0_3:GeneralRegister0_3|R0[4]~latch                                                                    ; GR0_3:GeneralRegister0_3|QA[4]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.564 ns                ;
+; N/A                                     ; 191.83 MHz ( period = 5.213 ns )                    ; IR:InstructionRegister|d[8]                                                                             ; ALU:Operation|Yout[0]                                                                                   ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.997 ns                ;
+; N/A                                     ; 192.60 MHz ( period = 5.192 ns )                    ; DR:DataRegister|d[3]                                                                                    ; GR0_3:GeneralRegister0_3|R3[3]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.458 ns                ;
+; N/A                                     ; 193.12 MHz ( period = 5.178 ns )                    ; DR:DataRegister|d[3]                                                                                    ; GR0_3:GeneralRegister0_3|R1[3]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.459 ns                ;
+; N/A                                     ; 193.72 MHz ( period = 5.162 ns )                    ; PSW:ProgramStatusWord|d[1]                                                                              ; GR0_3:GeneralRegister0_3|R2[5]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.414 ns                ;
+; N/A                                     ; 194.02 MHz ( period = 5.154 ns )                    ; GR0_3:GeneralRegister0_3|R1[0]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R1[0]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.409 ns                ;
+; N/A                                     ; 194.25 MHz ( period = 5.148 ns )                    ; PSW:ProgramStatusWord|d[1]                                                                              ; GR0_3:GeneralRegister0_3|R1[5]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.372 ns                ;
+; N/A                                     ; 194.40 MHz ( period = 5.144 ns )                    ; PSW:ProgramStatusWord|d[1]                                                                              ; GR0_3:GeneralRegister0_3|R3[5]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.374 ns                ;
+; N/A                                     ; 195.12 MHz ( period = 5.125 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg0 ; IR:InstructionRegister|d[8]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.908 ns                ;
+; N/A                                     ; 195.12 MHz ( period = 5.125 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg1 ; IR:InstructionRegister|d[8]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.908 ns                ;
+; N/A                                     ; 195.12 MHz ( period = 5.125 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg2 ; IR:InstructionRegister|d[8]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.908 ns                ;
+; N/A                                     ; 195.12 MHz ( period = 5.125 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg3 ; IR:InstructionRegister|d[8]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.908 ns                ;
+; N/A                                     ; 195.20 MHz ( period = 5.123 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg0 ; IR:InstructionRegister|d[5]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.886 ns                ;
+; N/A                                     ; 195.20 MHz ( period = 5.123 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg1 ; IR:InstructionRegister|d[5]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.886 ns                ;
+; N/A                                     ; 195.20 MHz ( period = 5.123 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg2 ; IR:InstructionRegister|d[5]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.886 ns                ;
+; N/A                                     ; 195.20 MHz ( period = 5.123 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg3 ; IR:InstructionRegister|d[5]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.886 ns                ;
+; N/A                                     ; 195.31 MHz ( period = 5.120 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R2[5]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.393 ns                ;
+; N/A                                     ; 195.77 MHz ( period = 5.108 ns )                    ; IR:InstructionRegister|d[8]                                                                             ; ALU:Operation|Yout[5]                                                                                   ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.874 ns                ;
+; N/A                                     ; 195.92 MHz ( period = 5.104 ns )                    ; IR:InstructionRegister|d[8]                                                                             ; ALU:Operation|Yout[1]                                                                                   ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.888 ns                ;
+; N/A                                     ; 196.16 MHz ( period = 5.098 ns )                    ; DR:DataRegister|d[2]                                                                                    ; GR0_3:GeneralRegister0_3|R1[2]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.368 ns                ;
+; N/A                                     ; 196.70 MHz ( period = 5.084 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R0[4]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.391 ns                ;
+; N/A                                     ; 196.77 MHz ( period = 5.082 ns )                    ; GR0_3:GeneralRegister0_3|R3[4]~_emulated                                                                ; GR0_3:GeneralRegister0_3|R3[4]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.387 ns                ;
+; N/A                                     ; 197.08 MHz ( period = 5.074 ns )                    ; DR:DataRegister|d[1]                                                                                    ; GR0_3:GeneralRegister0_3|R0[1]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.365 ns                ;
+; N/A                                     ; 197.55 MHz ( period = 5.062 ns )                    ; GR0_3:GeneralRegister0_3|R2[0]~latch                                                                    ; GR0_3:GeneralRegister0_3|QA[0]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.537 ns                ;
+; N/A                                     ; 198.10 MHz ( period = 5.048 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R1[4]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.382 ns                ;
+; N/A                                     ; 198.18 MHz ( period = 5.046 ns )                    ; GR0_3:GeneralRegister0_3|R2[1]~latch                                                                    ; GR0_3:GeneralRegister0_3|QB[1]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.486 ns                ;
+; N/A                                     ; 199.00 MHz ( period = 5.025 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|QB[0]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.776 ns                ;
+; N/A                                     ; 199.08 MHz ( period = 5.023 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R[5]                                                                           ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.793 ns                ;
+; N/A                                     ; 199.12 MHz ( period = 5.022 ns )                    ; GR0_3:GeneralRegister0_3|R3[1]~latch                                                                    ; GR0_3:GeneralRegister0_3|QB[1]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.473 ns                ;
+; N/A                                     ; 199.12 MHz ( period = 5.022 ns )                    ; PSW:ProgramStatusWord|d[1]                                                                              ; GR0_3:GeneralRegister0_3|R0[4]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.360 ns                ;
+; N/A                                     ; 199.92 MHz ( period = 5.002 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R0[0]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.342 ns                ;
+; N/A                                     ; 200.80 MHz ( period = 4.980 ns )                    ; IR:InstructionRegister|d[8]                                                                             ; ALU:Operation|Yout[3]                                                                                   ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.764 ns                ;
+; N/A                                     ; 201.05 MHz ( period = 4.974 ns )                    ; GR0_3:GeneralRegister0_3|R2[0]~latch                                                                    ; GR0_3:GeneralRegister0_3|R[0]                                                                           ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.494 ns                ;
+; N/A                                     ; 201.13 MHz ( period = 4.972 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg0 ; IR:InstructionRegister|d[3]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.756 ns                ;
+; N/A                                     ; 201.13 MHz ( period = 4.972 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg1 ; IR:InstructionRegister|d[3]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.756 ns                ;
+; N/A                                     ; 201.13 MHz ( period = 4.972 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg2 ; IR:InstructionRegister|d[3]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.756 ns                ;
+; N/A                                     ; 201.13 MHz ( period = 4.972 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg3 ; IR:InstructionRegister|d[3]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.756 ns                ;
+; N/A                                     ; 202.22 MHz ( period = 4.945 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R[3]                                                                           ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.715 ns                ;
+; N/A                                     ; 202.47 MHz ( period = 4.939 ns )                    ; GR0_3:GeneralRegister0_3|QA[1]                                                                          ; ALU:Operation|Yout[4]                                                                                   ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.689 ns                ;
+; N/A                                     ; 202.76 MHz ( period = 4.932 ns )                    ; GR0_3:GeneralRegister0_3|R0[1]~latch                                                                    ; GR0_3:GeneralRegister0_3|QA[1]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.583 ns                ;
+; N/A                                     ; 203.00 MHz ( period = 4.926 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R[3]                                                                           ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.696 ns                ;
+; N/A                                     ; 203.33 MHz ( period = 4.918 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R[4]                                                                           ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.688 ns                ;
+; N/A                                     ; 204.04 MHz ( period = 4.901 ns )                    ; IR:InstructionRegister|d[8]                                                                             ; ALU:Operation|Yout[2]                                                                                   ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.685 ns                ;
+; N/A                                     ; 204.25 MHz ( period = 4.896 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg0 ; IR:InstructionRegister|d[4]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.680 ns                ;
+; N/A                                     ; 204.25 MHz ( period = 4.896 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg1 ; IR:InstructionRegister|d[4]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.680 ns                ;
+; N/A                                     ; 204.25 MHz ( period = 4.896 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg2 ; IR:InstructionRegister|d[4]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.680 ns                ;
+; N/A                                     ; 204.25 MHz ( period = 4.896 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg3 ; IR:InstructionRegister|d[4]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.680 ns                ;
+; N/A                                     ; 205.17 MHz ( period = 4.874 ns )                    ; GR0_3:GeneralRegister0_3|R2[4]~latch                                                                    ; GR0_3:GeneralRegister0_3|QB[4]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.519 ns                ;
+; N/A                                     ; 205.17 MHz ( period = 4.874 ns )                    ; DR:DataRegister|d[3]                                                                                    ; GR0_3:GeneralRegister0_3|R2[3]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.318 ns                ;
+; N/A                                     ; 206.40 MHz ( period = 4.845 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg0 ; IR:InstructionRegister|d[7]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.661 ns                ;
+; N/A                                     ; 206.40 MHz ( period = 4.845 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg1 ; IR:InstructionRegister|d[7]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.661 ns                ;
+; N/A                                     ; 206.40 MHz ( period = 4.845 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg2 ; IR:InstructionRegister|d[7]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.661 ns                ;
+; N/A                                     ; 206.40 MHz ( period = 4.845 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg3 ; IR:InstructionRegister|d[7]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.661 ns                ;
+; N/A                                     ; 206.65 MHz ( period = 4.839 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg0 ; IR:InstructionRegister|d[1]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.623 ns                ;
+; N/A                                     ; 206.65 MHz ( period = 4.839 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg1 ; IR:InstructionRegister|d[1]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.623 ns                ;
+; N/A                                     ; 206.65 MHz ( period = 4.839 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg2 ; IR:InstructionRegister|d[1]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.623 ns                ;
+; N/A                                     ; 206.65 MHz ( period = 4.839 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg3 ; IR:InstructionRegister|d[1]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.623 ns                ;
+; N/A                                     ; 207.17 MHz ( period = 4.827 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg0 ; IR:InstructionRegister|d[6]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.643 ns                ;
+; N/A                                     ; 207.17 MHz ( period = 4.827 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg1 ; IR:InstructionRegister|d[6]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.643 ns                ;
+; N/A                                     ; 207.17 MHz ( period = 4.827 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg2 ; IR:InstructionRegister|d[6]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.643 ns                ;
+; N/A                                     ; 207.17 MHz ( period = 4.827 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg3 ; IR:InstructionRegister|d[6]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.643 ns                ;
+; N/A                                     ; 207.90 MHz ( period = 4.810 ns )                    ; GR0_3:GeneralRegister0_3|QB[0]                                                                          ; ALU:Operation|Yout[4]                                                                                   ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.578 ns                ;
+; N/A                                     ; 209.25 MHz ( period = 4.779 ns )                    ; GR0_3:GeneralRegister0_3|QA[1]                                                                          ; ALU:Operation|Yout[5]                                                                                   ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.529 ns                ;
+; N/A                                     ; 209.34 MHz ( period = 4.777 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|QA[4]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.529 ns                ;
+; N/A                                     ; 210.53 MHz ( period = 4.750 ns )                    ; PSW:ProgramStatusWord|d[1]                                                                              ; GR0_3:GeneralRegister0_3|R1[4]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.233 ns                ;
+; N/A                                     ; 210.61 MHz ( period = 4.748 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|QA[5]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.501 ns                ;
+; N/A                                     ; 210.66 MHz ( period = 4.747 ns )                    ; GR0_3:GeneralRegister0_3|QB[2]                                                                          ; ALU:Operation|Yout[4]                                                                                   ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.494 ns                ;
+; N/A                                     ; 210.70 MHz ( period = 4.746 ns )                    ; GR0_3:GeneralRegister0_3|R1[0]~latch                                                                    ; GR0_3:GeneralRegister0_3|QA[0]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.491 ns                ;
+; N/A                                     ; 211.24 MHz ( period = 4.734 ns )                    ; GR0_3:GeneralRegister0_3|R0[4]~latch                                                                    ; GR0_3:GeneralRegister0_3|R[4]                                                                           ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.335 ns                ;
+; N/A                                     ; 211.64 MHz ( period = 4.725 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg0 ; IR:InstructionRegister|d[2]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.509 ns                ;
+; N/A                                     ; 211.64 MHz ( period = 4.725 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg1 ; IR:InstructionRegister|d[2]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.509 ns                ;
+; N/A                                     ; 211.64 MHz ( period = 4.725 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg2 ; IR:InstructionRegister|d[2]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.509 ns                ;
+; N/A                                     ; 211.64 MHz ( period = 4.725 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg3 ; IR:InstructionRegister|d[2]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.509 ns                ;
+; N/A                                     ; 211.69 MHz ( period = 4.724 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg0 ; IR:InstructionRegister|d[0]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.515 ns                ;
+; N/A                                     ; 211.69 MHz ( period = 4.724 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg1 ; IR:InstructionRegister|d[0]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.515 ns                ;
+; N/A                                     ; 211.69 MHz ( period = 4.724 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg2 ; IR:InstructionRegister|d[0]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.515 ns                ;
+; N/A                                     ; 211.69 MHz ( period = 4.724 ns )                    ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg3 ; IR:InstructionRegister|d[0]                                                                             ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.515 ns                ;
+; N/A                                     ; 212.04 MHz ( period = 4.716 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|R0[5]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.224 ns                ;
+; N/A                                     ; 212.13 MHz ( period = 4.714 ns )                    ; DR:DataRegister|d[0]                                                                                    ; GR0_3:GeneralRegister0_3|R2[0]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.184 ns                ;
+; N/A                                     ; 212.40 MHz ( period = 4.708 ns )                    ; GR0_3:GeneralRegister0_3|R0[5]~latch                                                                    ; GR0_3:GeneralRegister0_3|QA[5]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.281 ns                ;
+; N/A                                     ; 212.86 MHz ( period = 4.698 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|QB[1]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.470 ns                ;
+; N/A                                     ; 212.86 MHz ( period = 4.698 ns )                    ; IR:InstructionRegister|d[9]                                                                             ; ALU:Operation|Yout[4]                                                                                   ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.484 ns                ;
+; N/A                                     ; 213.31 MHz ( period = 4.688 ns )                    ; GR0_3:GeneralRegister0_3|QB[1]                                                                          ; ALU:Operation|Yout[4]                                                                                   ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.435 ns                ;
+; N/A                                     ; 213.86 MHz ( period = 4.676 ns )                    ; GR0_3:GeneralRegister0_3|R2[5]~latch                                                                    ; GR0_3:GeneralRegister0_3|QB[5]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 2.298 ns                ;
+; N/A                                     ; 214.00 MHz ( period = 4.673 ns )                    ; IR:InstructionRegister|d[7]                                                                             ; GR0_3:GeneralRegister0_3|QB[1]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.445 ns                ;
+; N/A                                     ; 214.22 MHz ( period = 4.668 ns )                    ; GR0_3:GeneralRegister0_3|QA[1]                                                                          ; ALU:Operation|Yout[2]                                                                                   ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.436 ns                ;
+; N/A                                     ; 215.01 MHz ( period = 4.651 ns )                    ; GR0_3:GeneralRegister0_3|QA[1]                                                                          ; ALU:Operation|Yout[3]                                                                                   ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.419 ns                ;
+; N/A                                     ; 215.05 MHz ( period = 4.650 ns )                    ; GR0_3:GeneralRegister0_3|QB[0]                                                                          ; ALU:Operation|Yout[5]                                                                                   ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.418 ns                ;
+; N/A                                     ; 215.38 MHz ( period = 4.643 ns )                    ; IR:InstructionRegister|d[9]                                                                             ; ALU:Operation|Yout[0]                                                                                   ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.447 ns                ;
+; N/A                                     ; 215.89 MHz ( period = 4.632 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|QA[0]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.401 ns                ;
+; N/A                                     ; 215.98 MHz ( period = 4.630 ns )                    ; DR:DataRegister|d[0]                                                                                    ; GR0_3:GeneralRegister0_3|R1[0]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.147 ns                ;
+; N/A                                     ; 216.08 MHz ( period = 4.628 ns )                    ; PSW:ProgramStatusWord|d[1]                                                                              ; GR0_3:GeneralRegister0_3|QA[4]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.380 ns                ;
+; N/A                                     ; 216.36 MHz ( period = 4.622 ns )                    ; GR0_3:GeneralRegister0_3|QA[0]                                                                          ; ALU:Operation|Yout[4]                                                                                   ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.372 ns                ;
+; N/A                                     ; 216.36 MHz ( period = 4.622 ns )                    ; DR:DataRegister|d[0]                                                                                    ; GR0_3:GeneralRegister0_3|R3[0]~latch                                                                    ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.148 ns                ;
+; N/A                                     ; 216.59 MHz ( period = 4.617 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|QB[4]                                                                          ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.368 ns                ;
+; N/A                                     ; 216.68 MHz ( period = 4.615 ns )                    ; IR:InstructionRegister|d[6]                                                                             ; GR0_3:GeneralRegister0_3|R[5]                                                                           ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 4.385 ns                ;
+; N/A                                     ; Restricted to 210.08 MHz ( period = 4.760 ns )      ; PC:ProgramCounter|count[2]                                                                              ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg2 ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 1.054 ns                ;
+; N/A                                     ; Restricted to 210.08 MHz ( period = 4.760 ns )      ; PC:ProgramCounter|count[0]                                                                              ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg0 ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 0.988 ns                ;
+; N/A                                     ; Restricted to 210.08 MHz ( period = 4.760 ns )      ; PC:ProgramCounter|count[1]                                                                              ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~portb_address_reg1 ; KEY[3]     ; KEY[3]   ; None                        ; None                      ; 0.978 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                                                                                         ;                                                                                                         ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; tsu                                                                                                                                                             ;
++-------+--------------+------------+--------+---------------------------------------------------------------------------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From   ; To                                                                                                      ; To Clock ;
++-------+--------------+------------+--------+---------------------------------------------------------------------------------------------------------+----------+
+; N/A   ; None         ; 7.390 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|QA[4]                                                                          ; KEY[3]   ;
+; N/A   ; None         ; 7.385 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|QB[1]                                                                          ; KEY[3]   ;
+; N/A   ; None         ; 7.377 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|QB[0]                                                                          ; KEY[3]   ;
+; N/A   ; None         ; 7.358 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R[5]                                                                           ; KEY[3]   ;
+; N/A   ; None         ; 7.353 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|QB[4]                                                                          ; KEY[3]   ;
+; N/A   ; None         ; 7.318 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R0[1]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 7.178 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R[3]                                                                           ; KEY[3]   ;
+; N/A   ; None         ; 7.163 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R2[0]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 7.093 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R2[2]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 7.068 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R1[3]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.969 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|QA[0]                                                                          ; KEY[3]   ;
+; N/A   ; None         ; 6.940 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|QA[1]                                                                          ; KEY[3]   ;
+; N/A   ; None         ; 6.771 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R1[0]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.762 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R0[4]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.755 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|QB[5]                                                                          ; KEY[3]   ;
+; N/A   ; None         ; 6.735 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R2[4]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.731 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R1[1]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.730 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R0[5]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.705 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R1[4]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.704 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R3[3]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.626 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|QA[2]                                                                          ; KEY[3]   ;
+; N/A   ; None         ; 6.611 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R3[1]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.609 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R0[3]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.602 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R[4]                                                                           ; KEY[3]   ;
+; N/A   ; None         ; 6.596 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R0[2]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.588 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R2[1]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.578 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|QB[2]                                                                          ; KEY[3]   ;
+; N/A   ; None         ; 6.562 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R0[0]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.559 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R3[2]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.540 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R2[3]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.519 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R3[0]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.495 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R2[5]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.490 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R[2]                                                                           ; KEY[3]   ;
+; N/A   ; None         ; 6.463 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R1[5]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.463 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R3[5]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.455 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R1[2]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.430 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R[0]                                                                           ; KEY[3]   ;
+; N/A   ; None         ; 6.343 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|QA[5]                                                                          ; KEY[3]   ;
+; N/A   ; None         ; 6.336 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R3[4]~latch                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 6.261 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|QB[3]                                                                          ; KEY[3]   ;
+; N/A   ; None         ; 6.157 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|QA[3]                                                                          ; KEY[3]   ;
+; N/A   ; None         ; 6.119 ns   ; KEY[3] ; GR0_3:GeneralRegister0_3|R[1]                                                                           ; KEY[3]   ;
+; N/A   ; None         ; 5.150 ns   ; KEY[3] ; IR:InstructionRegister|d[9]                                                                             ; KEY[3]   ;
+; N/A   ; None         ; 5.150 ns   ; KEY[3] ; IR:InstructionRegister|d[10]                                                                            ; KEY[3]   ;
+; N/A   ; None         ; 5.150 ns   ; KEY[3] ; IR:InstructionRegister|d[11]                                                                            ; KEY[3]   ;
+; N/A   ; None         ; 5.150 ns   ; KEY[3] ; IR:InstructionRegister|d[5]                                                                             ; KEY[3]   ;
+; N/A   ; None         ; 5.150 ns   ; KEY[3] ; DR:DataRegister|d[1]                                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 4.856 ns   ; KEY[3] ; IR:InstructionRegister|d[8]                                                                             ; KEY[3]   ;
+; N/A   ; None         ; 4.849 ns   ; KEY[3] ; IR:InstructionRegister|d[3]                                                                             ; KEY[3]   ;
+; N/A   ; None         ; 4.849 ns   ; KEY[3] ; IR:InstructionRegister|d[4]                                                                             ; KEY[3]   ;
+; N/A   ; None         ; 4.849 ns   ; KEY[3] ; IR:InstructionRegister|d[1]                                                                             ; KEY[3]   ;
+; N/A   ; None         ; 4.849 ns   ; KEY[3] ; IR:InstructionRegister|d[2]                                                                             ; KEY[3]   ;
+; N/A   ; None         ; 4.849 ns   ; KEY[3] ; PSW:ProgramStatusWord|d[0]                                                                              ; KEY[3]   ;
+; N/A   ; None         ; 4.834 ns   ; KEY[3] ; DR:DataRegister|d[0]                                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 4.834 ns   ; KEY[3] ; IR:InstructionRegister|d[0]                                                                             ; KEY[3]   ;
+; N/A   ; None         ; 4.834 ns   ; KEY[3] ; DR:DataRegister|d[2]                                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 4.834 ns   ; KEY[3] ; DR:DataRegister|d[3]                                                                                    ; KEY[3]   ;
+; N/A   ; None         ; 4.826 ns   ; SW[16] ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg10 ; KEY[1]   ;
+; N/A   ; None         ; 4.777 ns   ; KEY[3] ; IR:InstructionRegister|d[7]                                                                             ; KEY[3]   ;
+; N/A   ; None         ; 4.777 ns   ; KEY[3] ; IR:InstructionRegister|d[6]                                                                             ; KEY[3]   ;
+; N/A   ; None         ; 4.777 ns   ; KEY[3] ; PSW:ProgramStatusWord|d[1]                                                                              ; KEY[3]   ;
+; N/A   ; None         ; 4.768 ns   ; SW[13] ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg7  ; KEY[1]   ;
+; N/A   ; None         ; 4.543 ns   ; SW[14] ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg8  ; KEY[1]   ;
+; N/A   ; None         ; 4.515 ns   ; SW[15] ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg9  ; KEY[1]   ;
+; N/A   ; None         ; 4.512 ns   ; SW[17] ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg11 ; KEY[1]   ;
+; N/A   ; None         ; 1.013 ns   ; SW[12] ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg6  ; KEY[1]   ;
+; N/A   ; None         ; 1.002 ns   ; SW[11] ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg5  ; KEY[1]   ;
+; N/A   ; None         ; 0.999 ns   ; SW[10] ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg4  ; KEY[1]   ;
+; N/A   ; None         ; 0.961 ns   ; SW[9]  ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg3  ; KEY[1]   ;
+; N/A   ; None         ; 0.790 ns   ; SW[7]  ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg1  ; KEY[1]   ;
+; N/A   ; None         ; 0.721 ns   ; SW[8]  ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg2  ; KEY[1]   ;
+; N/A   ; None         ; 0.594 ns   ; SW[1]  ; IIC:InstructionInputController|count[1]                                                                 ; KEY[1]   ;
+; N/A   ; None         ; 0.592 ns   ; SW[1]  ; IIC:InstructionInputController|count[2]                                                                 ; KEY[1]   ;
+; N/A   ; None         ; 0.591 ns   ; SW[1]  ; IIC:InstructionInputController|count[3]                                                                 ; KEY[1]   ;
+; N/A   ; None         ; 0.286 ns   ; SW[1]  ; IIC:InstructionInputController|count[0]                                                                 ; KEY[1]   ;
+; N/A   ; None         ; 0.232 ns   ; SW[6]  ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg0  ; KEY[1]   ;
++-------+--------------+------------+--------+---------------------------------------------------------------------------------------------------------+----------+
+
+
++----------------------------------------------------------------------------------------------------+
+; tco                                                                                                ;
++-------+--------------+------------+-----------------------------------------+---------+------------+
+; Slack ; Required tco ; Actual tco ; From                                    ; To      ; From Clock ;
++-------+--------------+------------+-----------------------------------------+---------+------------+
+; N/A   ; None         ; 11.677 ns  ; GR0_3:GeneralRegister0_3|QA[0]          ; HEX6[1] ; KEY[3]     ;
+; N/A   ; None         ; 11.570 ns  ; GR0_3:GeneralRegister0_3|QA[1]          ; HEX6[1] ; KEY[3]     ;
+; N/A   ; None         ; 11.182 ns  ; GR0_3:GeneralRegister0_3|QA[3]          ; HEX6[1] ; KEY[3]     ;
+; N/A   ; None         ; 11.021 ns  ; GR0_3:GeneralRegister0_3|QB[1]          ; HEX4[6] ; KEY[3]     ;
+; N/A   ; None         ; 10.972 ns  ; GR0_3:GeneralRegister0_3|QB[1]          ; HEX4[2] ; KEY[3]     ;
+; N/A   ; None         ; 10.885 ns  ; GR0_3:GeneralRegister0_3|QA[2]          ; HEX6[1] ; KEY[3]     ;
+; N/A   ; None         ; 10.848 ns  ; GR0_3:GeneralRegister0_3|QB[1]          ; HEX4[5] ; KEY[3]     ;
+; N/A   ; None         ; 10.843 ns  ; GR0_3:GeneralRegister0_3|QA[0]          ; HEX6[4] ; KEY[3]     ;
+; N/A   ; None         ; 10.731 ns  ; GR0_3:GeneralRegister0_3|QA[0]          ; HEX6[3] ; KEY[3]     ;
+; N/A   ; None         ; 10.709 ns  ; GR0_3:GeneralRegister0_3|QA[1]          ; HEX6[4] ; KEY[3]     ;
+; N/A   ; None         ; 10.673 ns  ; GR0_3:GeneralRegister0_3|QB[1]          ; HEX4[4] ; KEY[3]     ;
+; N/A   ; None         ; 10.598 ns  ; GR0_3:GeneralRegister0_3|QA[1]          ; HEX6[3] ; KEY[3]     ;
+; N/A   ; None         ; 10.348 ns  ; GR0_3:GeneralRegister0_3|QA[3]          ; HEX6[4] ; KEY[3]     ;
+; N/A   ; None         ; 10.331 ns  ; GR0_3:GeneralRegister0_3|QB[3]          ; HEX4[6] ; KEY[3]     ;
+; N/A   ; None         ; 10.278 ns  ; GR0_3:GeneralRegister0_3|QB[3]          ; HEX4[2] ; KEY[3]     ;
+; N/A   ; None         ; 10.238 ns  ; GR0_3:GeneralRegister0_3|QA[3]          ; HEX6[3] ; KEY[3]     ;
+; N/A   ; None         ; 10.231 ns  ; GR0_3:GeneralRegister0_3|QB[2]          ; HEX4[6] ; KEY[3]     ;
+; N/A   ; None         ; 10.210 ns  ; GR0_3:GeneralRegister0_3|QA[0]          ; HEX6[5] ; KEY[3]     ;
+; N/A   ; None         ; 10.181 ns  ; GR0_3:GeneralRegister0_3|QB[2]          ; HEX4[2] ; KEY[3]     ;
+; N/A   ; None         ; 10.154 ns  ; GR0_3:GeneralRegister0_3|QB[3]          ; HEX4[5] ; KEY[3]     ;
+; N/A   ; None         ; 10.077 ns  ; GR0_3:GeneralRegister0_3|QA[1]          ; HEX6[5] ; KEY[3]     ;
+; N/A   ; None         ; 10.059 ns  ; GR0_3:GeneralRegister0_3|QB[2]          ; HEX4[5] ; KEY[3]     ;
+; N/A   ; None         ; 10.024 ns  ; GR0_3:GeneralRegister0_3|QA[2]          ; HEX6[4] ; KEY[3]     ;
+; N/A   ; None         ; 9.983 ns   ; GR0_3:GeneralRegister0_3|QB[3]          ; HEX4[4] ; KEY[3]     ;
+; N/A   ; None         ; 9.972 ns   ; PSW:ProgramStatusWord|d[1]              ; HEX3[5] ; KEY[3]     ;
+; N/A   ; None         ; 9.913 ns   ; GR0_3:GeneralRegister0_3|QA[2]          ; HEX6[3] ; KEY[3]     ;
+; N/A   ; None         ; 9.911 ns   ; GR0_3:GeneralRegister0_3|QA[0]          ; HEX6[2] ; KEY[3]     ;
+; N/A   ; None         ; 9.880 ns   ; GR0_3:GeneralRegister0_3|QB[2]          ; HEX4[4] ; KEY[3]     ;
+; N/A   ; None         ; 9.851 ns   ; GR0_3:GeneralRegister0_3|QB[1]          ; HEX4[1] ; KEY[3]     ;
+; N/A   ; None         ; 9.826 ns   ; GR0_3:GeneralRegister0_3|QA[1]          ; HEX6[2] ; KEY[3]     ;
+; N/A   ; None         ; 9.715 ns   ; GR0_3:GeneralRegister0_3|QA[3]          ; HEX6[5] ; KEY[3]     ;
+; N/A   ; None         ; 9.649 ns   ; GR0_3:GeneralRegister0_3|QB[2]          ; HEX5[0] ; KEY[3]     ;
+; N/A   ; None         ; 9.638 ns   ; DR:DataRegister|d[1]                    ; HEX1[1] ; KEY[3]     ;
+; N/A   ; None         ; 9.616 ns   ; GR0_3:GeneralRegister0_3|QB[1]          ; HEX4[3] ; KEY[3]     ;
+; N/A   ; None         ; 9.594 ns   ; GR0_3:GeneralRegister0_3|QB[0]          ; HEX4[6] ; KEY[3]     ;
+; N/A   ; None         ; 9.590 ns   ; PSW:ProgramStatusWord|d[1]              ; HEX3[3] ; KEY[3]     ;
+; N/A   ; None         ; 9.589 ns   ; DR:DataRegister|d[1]                    ; HEX1[0] ; KEY[3]     ;
+; N/A   ; None         ; 9.587 ns   ; GR0_3:GeneralRegister0_3|QB[1]          ; HEX5[0] ; KEY[3]     ;
+; N/A   ; None         ; 9.575 ns   ; DR:DataRegister|d[2]                    ; HEX1[1] ; KEY[3]     ;
+; N/A   ; None         ; 9.574 ns   ; GR0_3:GeneralRegister0_3|QA[1]          ; HEX7[5] ; KEY[3]     ;
+; N/A   ; None         ; 9.557 ns   ; GR0_3:GeneralRegister0_3|QB[0]          ; HEX4[2] ; KEY[3]     ;
+; N/A   ; None         ; 9.538 ns   ; DR:DataRegister|d[1]                    ; HEX2[5] ; KEY[3]     ;
+; N/A   ; None         ; 9.538 ns   ; DR:DataRegister|d[1]                    ; HEX2[4] ; KEY[3]     ;
+; N/A   ; None         ; 9.528 ns   ; PSW:ProgramStatusWord|d[1]              ; HEX3[4] ; KEY[3]     ;
+; N/A   ; None         ; 9.528 ns   ; PSW:ProgramStatusWord|d[1]              ; HEX3[2] ; KEY[3]     ;
+; N/A   ; None         ; 9.528 ns   ; PSW:ProgramStatusWord|d[1]              ; HEX3[1] ; KEY[3]     ;
+; N/A   ; None         ; 9.521 ns   ; DR:DataRegister|d[2]                    ; HEX1[0] ; KEY[3]     ;
+; N/A   ; None         ; 9.501 ns   ; PSW:ProgramStatusWord|d[1]              ; HEX3[0] ; KEY[3]     ;
+; N/A   ; None         ; 9.498 ns   ; DR:DataRegister|d[1]                    ; HEX2[3] ; KEY[3]     ;
+; N/A   ; None         ; 9.464 ns   ; GR0_3:GeneralRegister0_3|QB[3]          ; HEX5[0] ; KEY[3]     ;
+; N/A   ; None         ; 9.461 ns   ; DR:DataRegister|d[1]                    ; HEX2[0] ; KEY[3]     ;
+; N/A   ; None         ; 9.457 ns   ; DR:DataRegister|d[1]                    ; HEX1[6] ; KEY[3]     ;
+; N/A   ; None         ; 9.452 ns   ; DR:DataRegister|d[2]                    ; HEX2[5] ; KEY[3]     ;
+; N/A   ; None         ; 9.452 ns   ; DR:DataRegister|d[2]                    ; HEX2[4] ; KEY[3]     ;
+; N/A   ; None         ; 9.437 ns   ; GR0_3:GeneralRegister0_3|QA[3]          ; HEX6[2] ; KEY[3]     ;
+; N/A   ; None         ; 9.432 ns   ; DR:DataRegister|d[1]                    ; HEX1[5] ; KEY[3]     ;
+; N/A   ; None         ; 9.421 ns   ; GR0_3:GeneralRegister0_3|QB[0]          ; HEX4[5] ; KEY[3]     ;
+; N/A   ; None         ; 9.412 ns   ; DR:DataRegister|d[2]                    ; HEX2[3] ; KEY[3]     ;
+; N/A   ; None         ; 9.394 ns   ; DR:DataRegister|d[2]                    ; HEX1[6] ; KEY[3]     ;
+; N/A   ; None         ; 9.393 ns   ; GR0_3:GeneralRegister0_3|QB[1]          ; HEX4[0] ; KEY[3]     ;
+; N/A   ; None         ; 9.391 ns   ; GR0_3:GeneralRegister0_3|QA[2]          ; HEX6[5] ; KEY[3]     ;
+; N/A   ; None         ; 9.375 ns   ; DR:DataRegister|d[2]                    ; HEX2[0] ; KEY[3]     ;
+; N/A   ; None         ; 9.369 ns   ; DR:DataRegister|d[2]                    ; HEX1[5] ; KEY[3]     ;
+; N/A   ; None         ; 9.364 ns   ; GR0_3:GeneralRegister0_3|QB[2]          ; HEX5[3] ; KEY[3]     ;
+; N/A   ; None         ; 9.344 ns   ; GR0_3:GeneralRegister0_3|QB[2]          ; HEX5[5] ; KEY[3]     ;
+; N/A   ; None         ; 9.344 ns   ; GR0_3:GeneralRegister0_3|QB[2]          ; HEX5[4] ; KEY[3]     ;
+; N/A   ; None         ; 9.316 ns   ; PSW:ProgramStatusWord|d[1]              ; HEX3[6] ; KEY[3]     ;
+; N/A   ; None         ; 9.306 ns   ; PC:ProgramCounter|count[0]              ; LEDG[0] ; KEY[3]     ;
+; N/A   ; None         ; 9.303 ns   ; DR:DataRegister|d[3]                    ; HEX1[1] ; KEY[3]     ;
+; N/A   ; None         ; 9.302 ns   ; GR0_3:GeneralRegister0_3|QB[1]          ; HEX5[3] ; KEY[3]     ;
+; N/A   ; None         ; 9.292 ns   ; GR0_3:GeneralRegister0_3|QA[1]          ; HEX7[0] ; KEY[3]     ;
+; N/A   ; None         ; 9.282 ns   ; GR0_3:GeneralRegister0_3|QB[1]          ; HEX5[5] ; KEY[3]     ;
+; N/A   ; None         ; 9.282 ns   ; GR0_3:GeneralRegister0_3|QB[1]          ; HEX5[4] ; KEY[3]     ;
+; N/A   ; None         ; 9.262 ns   ; GR0_3:GeneralRegister0_3|QA[1]          ; HEX7[4] ; KEY[3]     ;
+; N/A   ; None         ; 9.262 ns   ; GR0_3:GeneralRegister0_3|QA[1]          ; HEX7[3] ; KEY[3]     ;
+; N/A   ; None         ; 9.258 ns   ; PSW:ProgramStatusWord|d[0]              ; HEX3[5] ; KEY[3]     ;
+; N/A   ; None         ; 9.253 ns   ; DR:DataRegister|d[3]                    ; HEX1[0] ; KEY[3]     ;
+; N/A   ; None         ; 9.246 ns   ; GR0_3:GeneralRegister0_3|QB[0]          ; HEX4[4] ; KEY[3]     ;
+; N/A   ; None         ; 9.210 ns   ; GR0_3:GeneralRegister0_3|QA[3]          ; HEX7[5] ; KEY[3]     ;
+; N/A   ; None         ; 9.207 ns   ; DR:DataRegister|d[1]                    ; HEX1[4] ; KEY[3]     ;
+; N/A   ; None         ; 9.206 ns   ; DR:DataRegister|d[3]                    ; HEX2[5] ; KEY[3]     ;
+; N/A   ; None         ; 9.206 ns   ; DR:DataRegister|d[3]                    ; HEX2[4] ; KEY[3]     ;
+; N/A   ; None         ; 9.186 ns   ; DR:DataRegister|d[1]                    ; HEX1[3] ; KEY[3]     ;
+; N/A   ; None         ; 9.179 ns   ; GR0_3:GeneralRegister0_3|QB[3]          ; HEX5[3] ; KEY[3]     ;
+; N/A   ; None         ; 9.166 ns   ; DR:DataRegister|d[3]                    ; HEX2[3] ; KEY[3]     ;
+; N/A   ; None         ; 9.163 ns   ; GR0_3:GeneralRegister0_3|QA[2]          ; HEX7[5] ; KEY[3]     ;
+; N/A   ; None         ; 9.159 ns   ; GR0_3:GeneralRegister0_3|QB[3]          ; HEX5[5] ; KEY[3]     ;
+; N/A   ; None         ; 9.159 ns   ; GR0_3:GeneralRegister0_3|QB[3]          ; HEX5[4] ; KEY[3]     ;
+; N/A   ; None         ; 9.150 ns   ; IIC:InstructionInputController|count[0] ; LEDG[0] ; KEY[1]     ;
+; N/A   ; None         ; 9.147 ns   ; DR:DataRegister|d[1]                    ; HEX1[2] ; KEY[3]     ;
+; N/A   ; None         ; 9.145 ns   ; DR:DataRegister|d[2]                    ; HEX1[4] ; KEY[3]     ;
+; N/A   ; None         ; 9.142 ns   ; GR0_3:GeneralRegister0_3|QA[2]          ; HEX6[2] ; KEY[3]     ;
+; N/A   ; None         ; 9.136 ns   ; IIC:InstructionInputController|count[2] ; LEDG[0] ; KEY[1]     ;
+; N/A   ; None         ; 9.134 ns   ; GR0_3:GeneralRegister0_3|QB[3]          ; HEX4[1] ; KEY[3]     ;
+; N/A   ; None         ; 9.129 ns   ; DR:DataRegister|d[3]                    ; HEX2[0] ; KEY[3]     ;
+; N/A   ; None         ; 9.123 ns   ; DR:DataRegister|d[2]                    ; HEX1[3] ; KEY[3]     ;
+; N/A   ; None         ; 9.121 ns   ; DR:DataRegister|d[3]                    ; HEX1[6] ; KEY[3]     ;
+; N/A   ; None         ; 9.115 ns   ; GR0_3:GeneralRegister0_3|QA[0]          ; HEX6[6] ; KEY[3]     ;
+; N/A   ; None         ; 9.096 ns   ; DR:DataRegister|d[3]                    ; HEX1[5] ; KEY[3]     ;
+; N/A   ; None         ; 9.061 ns   ; GR0_3:GeneralRegister0_3|QB[2]          ; HEX4[1] ; KEY[3]     ;
+; N/A   ; None         ; 9.049 ns   ; DR:DataRegister|d[2]                    ; HEX1[2] ; KEY[3]     ;
+; N/A   ; None         ; 9.023 ns   ; GR0_3:GeneralRegister0_3|QA[0]          ; HEX6[0] ; KEY[3]     ;
+; N/A   ; None         ; 8.999 ns   ; PC:ProgramCounter|count[2]              ; LEDG[0] ; KEY[3]     ;
+; N/A   ; None         ; 8.981 ns   ; GR0_3:GeneralRegister0_3|QA[1]          ; HEX6[6] ; KEY[3]     ;
+; N/A   ; None         ; 8.928 ns   ; GR0_3:GeneralRegister0_3|QA[3]          ; HEX7[0] ; KEY[3]     ;
+; N/A   ; None         ; 8.927 ns   ; GR0_3:GeneralRegister0_3|QB[3]          ; HEX4[3] ; KEY[3]     ;
+; N/A   ; None         ; 8.898 ns   ; GR0_3:GeneralRegister0_3|QA[3]          ; HEX7[4] ; KEY[3]     ;
+; N/A   ; None         ; 8.898 ns   ; GR0_3:GeneralRegister0_3|QA[3]          ; HEX7[3] ; KEY[3]     ;
+; N/A   ; None         ; 8.890 ns   ; GR0_3:GeneralRegister0_3|QA[1]          ; HEX6[0] ; KEY[3]     ;
+; N/A   ; None         ; 8.881 ns   ; GR0_3:GeneralRegister0_3|QA[2]          ; HEX7[0] ; KEY[3]     ;
+; N/A   ; None         ; 8.875 ns   ; PSW:ProgramStatusWord|d[0]              ; HEX3[3] ; KEY[3]     ;
+; N/A   ; None         ; 8.869 ns   ; DR:DataRegister|d[3]                    ; HEX1[4] ; KEY[3]     ;
+; N/A   ; None         ; 8.856 ns   ; DR:DataRegister|d[0]                    ; HEX1[1] ; KEY[3]     ;
+; N/A   ; None         ; 8.851 ns   ; GR0_3:GeneralRegister0_3|QA[2]          ; HEX7[4] ; KEY[3]     ;
+; N/A   ; None         ; 8.851 ns   ; GR0_3:GeneralRegister0_3|QA[2]          ; HEX7[3] ; KEY[3]     ;
+; N/A   ; None         ; 8.848 ns   ; DR:DataRegister|d[3]                    ; HEX1[3] ; KEY[3]     ;
+; N/A   ; None         ; 8.826 ns   ; GR0_3:GeneralRegister0_3|QB[2]          ; HEX4[3] ; KEY[3]     ;
+; N/A   ; None         ; 8.820 ns   ; DR:DataRegister|d[0]                    ; HEX1[0] ; KEY[3]     ;
+; N/A   ; None         ; 8.814 ns   ; PSW:ProgramStatusWord|d[0]              ; HEX3[4] ; KEY[3]     ;
+; N/A   ; None         ; 8.814 ns   ; PSW:ProgramStatusWord|d[0]              ; HEX3[2] ; KEY[3]     ;
+; N/A   ; None         ; 8.814 ns   ; PSW:ProgramStatusWord|d[0]              ; HEX3[1] ; KEY[3]     ;
+; N/A   ; None         ; 8.812 ns   ; DR:DataRegister|d[3]                    ; HEX1[2] ; KEY[3]     ;
+; N/A   ; None         ; 8.757 ns   ; PSW:ProgramStatusWord|d[0]              ; HEX3[0] ; KEY[3]     ;
+; N/A   ; None         ; 8.704 ns   ; GR0_3:GeneralRegister0_3|QB[3]          ; HEX4[0] ; KEY[3]     ;
+; N/A   ; None         ; 8.704 ns   ; IIC:InstructionInputController|count[3] ; LEDG[0] ; KEY[1]     ;
+; N/A   ; None         ; 8.691 ns   ; DR:DataRegister|d[0]                    ; HEX1[6] ; KEY[3]     ;
+; N/A   ; None         ; 8.666 ns   ; DR:DataRegister|d[0]                    ; HEX1[5] ; KEY[3]     ;
+; N/A   ; None         ; 8.621 ns   ; GR0_3:GeneralRegister0_3|QA[3]          ; HEX6[6] ; KEY[3]     ;
+; N/A   ; None         ; 8.604 ns   ; GR0_3:GeneralRegister0_3|QB[2]          ; HEX4[0] ; KEY[3]     ;
+; N/A   ; None         ; 8.531 ns   ; GR0_3:GeneralRegister0_3|QA[3]          ; HEX6[0] ; KEY[3]     ;
+; N/A   ; None         ; 8.440 ns   ; DR:DataRegister|d[0]                    ; HEX1[4] ; KEY[3]     ;
+; N/A   ; None         ; 8.426 ns   ; GR0_3:GeneralRegister0_3|QB[0]          ; HEX4[1] ; KEY[3]     ;
+; N/A   ; None         ; 8.419 ns   ; DR:DataRegister|d[0]                    ; HEX1[3] ; KEY[3]     ;
+; N/A   ; None         ; 8.336 ns   ; DR:DataRegister|d[0]                    ; HEX1[2] ; KEY[3]     ;
+; N/A   ; None         ; 8.296 ns   ; GR0_3:GeneralRegister0_3|QA[2]          ; HEX6[6] ; KEY[3]     ;
+; N/A   ; None         ; 8.207 ns   ; GR0_3:GeneralRegister0_3|QA[2]          ; HEX6[0] ; KEY[3]     ;
+; N/A   ; None         ; 8.200 ns   ; GR0_3:GeneralRegister0_3|QB[0]          ; HEX4[3] ; KEY[3]     ;
+; N/A   ; None         ; 8.186 ns   ; PC:ProgramCounter|count[3]              ; LEDG[0] ; KEY[3]     ;
+; N/A   ; None         ; 8.087 ns   ; IIC:InstructionInputController|count[1] ; LEDG[0] ; KEY[1]     ;
+; N/A   ; None         ; 8.028 ns   ; PC:ProgramCounter|count[1]              ; LEDG[0] ; KEY[3]     ;
+; N/A   ; None         ; 7.975 ns   ; GR0_3:GeneralRegister0_3|QB[0]          ; HEX4[0] ; KEY[3]     ;
+; N/A   ; None         ; 7.835 ns   ; PSW:ProgramStatusWord|d[0]              ; HEX3[6] ; KEY[3]     ;
+; N/A   ; None         ; 7.410 ns   ; IIC:InstructionInputController|count[1] ; LEDG[5] ; KEY[1]     ;
+; N/A   ; None         ; 7.384 ns   ; IIC:InstructionInputController|count[0] ; LEDG[4] ; KEY[1]     ;
+; N/A   ; None         ; 7.154 ns   ; IIC:InstructionInputController|count[2] ; LEDG[6] ; KEY[1]     ;
+; N/A   ; None         ; 7.110 ns   ; IIC:InstructionInputController|count[3] ; LEDG[7] ; KEY[1]     ;
++-------+--------------+------------+-----------------------------------------+---------+------------+
+
+
++-----------------------------------------------------------------+
+; tpd                                                             ;
++-------+-------------------+-----------------+--------+----------+
+; Slack ; Required P2P Time ; Actual P2P Time ; From   ; To       ;
++-------+-------------------+-----------------+--------+----------+
+; N/A   ; None              ; 9.855 ns        ; SW[15] ; LEDR[15] ;
+; N/A   ; None              ; 9.835 ns        ; SW[16] ; LEDR[16] ;
+; N/A   ; None              ; 9.811 ns        ; SW[17] ; LEDR[17] ;
+; N/A   ; None              ; 9.756 ns        ; SW[13] ; LEDR[13] ;
+; N/A   ; None              ; 9.440 ns        ; SW[14] ; LEDR[14] ;
+; N/A   ; None              ; 6.692 ns        ; SW[7]  ; LEDR[7]  ;
+; N/A   ; None              ; 6.620 ns        ; SW[12] ; LEDR[12] ;
+; N/A   ; None              ; 6.523 ns        ; SW[11] ; LEDR[11] ;
+; N/A   ; None              ; 6.393 ns        ; SW[8]  ; LEDR[8]  ;
+; N/A   ; None              ; 6.302 ns        ; SW[10] ; LEDR[10] ;
+; N/A   ; None              ; 6.092 ns        ; SW[6]  ; LEDR[6]  ;
+; N/A   ; None              ; 5.879 ns        ; SW[9]  ; LEDR[9]  ;
+; N/A   ; None              ; 5.702 ns        ; SW[5]  ; LEDR[5]  ;
+; N/A   ; None              ; 5.679 ns        ; SW[1]  ; LEDR[1]  ;
+; N/A   ; None              ; 5.611 ns        ; SW[0]  ; LEDR[0]  ;
+; N/A   ; None              ; 5.410 ns        ; SW[3]  ; LEDR[3]  ;
+; N/A   ; None              ; 5.280 ns        ; SW[4]  ; LEDR[4]  ;
+; N/A   ; None              ; 5.146 ns        ; SW[2]  ; LEDR[2]  ;
++-------+-------------------+-----------------+--------+----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; th                                                                                                                                                                    ;
++---------------+-------------+-----------+--------+---------------------------------------------------------------------------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From   ; To                                                                                                      ; To Clock ;
++---------------+-------------+-----------+--------+---------------------------------------------------------------------------------------------------------+----------+
+; N/A           ; None        ; 0.037 ns  ; SW[6]  ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg0  ; KEY[1]   ;
+; N/A           ; None        ; -0.056 ns ; SW[1]  ; IIC:InstructionInputController|count[0]                                                                 ; KEY[1]   ;
+; N/A           ; None        ; -0.361 ns ; SW[1]  ; IIC:InstructionInputController|count[3]                                                                 ; KEY[1]   ;
+; N/A           ; None        ; -0.362 ns ; SW[1]  ; IIC:InstructionInputController|count[2]                                                                 ; KEY[1]   ;
+; N/A           ; None        ; -0.364 ns ; SW[1]  ; IIC:InstructionInputController|count[1]                                                                 ; KEY[1]   ;
+; N/A           ; None        ; -0.452 ns ; SW[8]  ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg2  ; KEY[1]   ;
+; N/A           ; None        ; -0.521 ns ; SW[7]  ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg1  ; KEY[1]   ;
+; N/A           ; None        ; -0.692 ns ; SW[9]  ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg3  ; KEY[1]   ;
+; N/A           ; None        ; -0.730 ns ; SW[10] ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg4  ; KEY[1]   ;
+; N/A           ; None        ; -0.733 ns ; SW[11] ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg5  ; KEY[1]   ;
+; N/A           ; None        ; -0.744 ns ; SW[12] ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg6  ; KEY[1]   ;
+; N/A           ; None        ; -4.243 ns ; SW[17] ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg11 ; KEY[1]   ;
+; N/A           ; None        ; -4.246 ns ; SW[15] ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg9  ; KEY[1]   ;
+; N/A           ; None        ; -4.274 ns ; SW[14] ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg8  ; KEY[1]   ;
+; N/A           ; None        ; -4.499 ns ; SW[13] ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg7  ; KEY[1]   ;
+; N/A           ; None        ; -4.547 ns ; KEY[3] ; IR:InstructionRegister|d[7]                                                                             ; KEY[3]   ;
+; N/A           ; None        ; -4.547 ns ; KEY[3] ; IR:InstructionRegister|d[6]                                                                             ; KEY[3]   ;
+; N/A           ; None        ; -4.547 ns ; KEY[3] ; PSW:ProgramStatusWord|d[1]                                                                              ; KEY[3]   ;
+; N/A           ; None        ; -4.557 ns ; SW[16] ; PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg10 ; KEY[1]   ;
+; N/A           ; None        ; -4.604 ns ; KEY[3] ; DR:DataRegister|d[0]                                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -4.604 ns ; KEY[3] ; IR:InstructionRegister|d[0]                                                                             ; KEY[3]   ;
+; N/A           ; None        ; -4.604 ns ; KEY[3] ; DR:DataRegister|d[2]                                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -4.604 ns ; KEY[3] ; DR:DataRegister|d[3]                                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -4.619 ns ; KEY[3] ; IR:InstructionRegister|d[3]                                                                             ; KEY[3]   ;
+; N/A           ; None        ; -4.619 ns ; KEY[3] ; IR:InstructionRegister|d[4]                                                                             ; KEY[3]   ;
+; N/A           ; None        ; -4.619 ns ; KEY[3] ; IR:InstructionRegister|d[1]                                                                             ; KEY[3]   ;
+; N/A           ; None        ; -4.619 ns ; KEY[3] ; IR:InstructionRegister|d[2]                                                                             ; KEY[3]   ;
+; N/A           ; None        ; -4.619 ns ; KEY[3] ; PSW:ProgramStatusWord|d[0]                                                                              ; KEY[3]   ;
+; N/A           ; None        ; -4.626 ns ; KEY[3] ; IR:InstructionRegister|d[8]                                                                             ; KEY[3]   ;
+; N/A           ; None        ; -4.920 ns ; KEY[3] ; IR:InstructionRegister|d[9]                                                                             ; KEY[3]   ;
+; N/A           ; None        ; -4.920 ns ; KEY[3] ; IR:InstructionRegister|d[10]                                                                            ; KEY[3]   ;
+; N/A           ; None        ; -4.920 ns ; KEY[3] ; IR:InstructionRegister|d[11]                                                                            ; KEY[3]   ;
+; N/A           ; None        ; -4.920 ns ; KEY[3] ; IR:InstructionRegister|d[5]                                                                             ; KEY[3]   ;
+; N/A           ; None        ; -4.920 ns ; KEY[3] ; DR:DataRegister|d[1]                                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.049 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|QA[4]                                                                          ; KEY[3]   ;
+; N/A           ; None        ; -5.061 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|QB[3]                                                                          ; KEY[3]   ;
+; N/A           ; None        ; -5.125 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R[4]                                                                           ; KEY[3]   ;
+; N/A           ; None        ; -5.129 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|QB[5]                                                                          ; KEY[3]   ;
+; N/A           ; None        ; -5.247 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|QB[2]                                                                          ; KEY[3]   ;
+; N/A           ; None        ; -5.253 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R[1]                                                                           ; KEY[3]   ;
+; N/A           ; None        ; -5.263 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|QA[1]                                                                          ; KEY[3]   ;
+; N/A           ; None        ; -5.384 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R3[4]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.459 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R1[2]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.491 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|QA[3]                                                                          ; KEY[3]   ;
+; N/A           ; None        ; -5.502 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R2[5]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.579 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R2[3]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.588 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R1[5]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.591 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R2[1]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.592 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R3[5]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.600 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R0[0]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.615 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R3[1]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.636 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|QA[2]                                                                          ; KEY[3]   ;
+; N/A           ; None        ; -5.645 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R0[3]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.683 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R3[0]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.720 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R0[2]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.722 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|QA[5]                                                                          ; KEY[3]   ;
+; N/A           ; None        ; -5.728 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R3[2]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.732 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R[5]                                                                           ; KEY[3]   ;
+; N/A           ; None        ; -5.739 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R1[4]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.770 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R0[5]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.780 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R1[1]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.783 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R[2]                                                                           ; KEY[3]   ;
+; N/A           ; None        ; -5.809 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R0[4]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.847 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|QA[0]                                                                          ; KEY[3]   ;
+; N/A           ; None        ; -5.851 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R[0]                                                                           ; KEY[3]   ;
+; N/A           ; None        ; -5.865 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R3[3]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.875 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R2[4]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -5.876 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|QB[4]                                                                          ; KEY[3]   ;
+; N/A           ; None        ; -5.927 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R1[0]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -6.030 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R[3]                                                                           ; KEY[3]   ;
+; N/A           ; None        ; -6.107 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|QB[0]                                                                          ; KEY[3]   ;
+; N/A           ; None        ; -6.146 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R2[2]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -6.202 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R2[0]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -6.234 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R1[3]~latch                                                                    ; KEY[3]   ;
+; N/A           ; None        ; -6.348 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|QB[1]                                                                          ; KEY[3]   ;
+; N/A           ; None        ; -6.441 ns ; KEY[3] ; GR0_3:GeneralRegister0_3|R0[1]~latch                                                                    ; KEY[3]   ;
++---------------+-------------+-----------+--------+---------------------------------------------------------------------------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 235 06/17/2009 Service Pack 2 SJ Web Edition
+    Info: Processing started: Sat Jun 22 20:49:25 2019
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off CPU_6bit -c CPU_6bit --timing_analysis_only
+Warning: Timing Analysis is analyzing one or more combinational loops as latches
+    Warning: Node "GR0_3:GeneralRegister0_3|R2[0]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R3[0]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R1[0]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R0[0]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R3[1]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R1[1]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R1[5]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R3[5]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R2[1]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R0[1]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R2[5]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R0[5]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R2[4]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R3[4]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R1[4]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R0[4]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R3[2]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R2[2]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R1[3]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R3[3]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R0[2]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R1[2]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R2[3]~latch" is a latch
+    Warning: Node "GR0_3:GeneralRegister0_3|R0[3]~latch" is a latch
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R1[3]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux68~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R3[3]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux80~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R2[3]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux74~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R0[3]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux62~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R3[2]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux81~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R2[2]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux75~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R0[2]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux63~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R1[2]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux69~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R2[4]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux73~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R1[4]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux67~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R0[4]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux61~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R3[4]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux79~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R1[5]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux66~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R3[5]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux78~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R2[5]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux72~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R0[5]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux60~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R3[1]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux82~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R1[1]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux70~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R0[1]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux64~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R2[1]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux76~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R2[0]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux77~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R3[0]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux83~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R1[0]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux71~0"
+Warning: Found combinational loop of 2 nodes
+    Warning: Node "GR0_3:GeneralRegister0_3|R0[0]~head_lut"
+    Warning: Node "GR0_3:GeneralRegister0_3|Mux65~0"
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "KEY[1]" is an undefined clock
+    Info: Assuming node "KEY[3]" is an undefined clock
+Info: Clock "KEY[1]" Internal fmax is restricted to 210.08 MHz between source memory "PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg0" and destination memory "PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_memory_reg0"
+    Info: fmax restricted to Clock High delay (2.38 ns) plus Clock Low delay (2.38 ns) : restricted to 4.76 ns. Expand message to see actual delay path.
+        Info: + Longest memory to memory delay is 2.645 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = M4K_X52_Y10; Fanout = 1; MEM Node = 'PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg0'
+            Info: 2: + IC(0.000 ns) + CELL(2.645 ns) = 2.645 ns; Loc. = M4K_X52_Y10; Fanout = 0; MEM Node = 'PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_memory_reg0'
+            Info: Total cell delay = 2.645 ns ( 100.00 % )
+        Info: - Smallest clock skew is -0.025 ns
+            Info: + Shortest clock path from clock "KEY[1]" to destination memory is 2.603 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.842 ns) = 0.842 ns; Loc. = PIN_N23; Fanout = 1; CLK Node = 'KEY[1]'
+                Info: 2: + IC(0.041 ns) + CELL(0.155 ns) = 1.038 ns; Loc. = CLKDELAYCTRL_G4; Fanout = 1; COMB Node = 'KEY[1]~clk_delay_ctrl'
+                Info: 3: + IC(0.000 ns) + CELL(0.000 ns) = 1.038 ns; Loc. = CLKCTRL_G4; Fanout = 32; COMB Node = 'KEY[1]~clkctrl'
+                Info: 4: + IC(0.930 ns) + CELL(0.635 ns) = 2.603 ns; Loc. = M4K_X52_Y10; Fanout = 0; MEM Node = 'PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_memory_reg0'
+                Info: Total cell delay = 1.632 ns ( 62.70 % )
+                Info: Total interconnect delay = 0.971 ns ( 37.30 % )
+            Info: - Longest clock path from clock "KEY[1]" to source memory is 2.628 ns
+                Info: 1: + IC(0.000 ns) + CELL(0.842 ns) = 0.842 ns; Loc. = PIN_N23; Fanout = 1; CLK Node = 'KEY[1]'
+                Info: 2: + IC(0.041 ns) + CELL(0.155 ns) = 1.038 ns; Loc. = CLKDELAYCTRL_G4; Fanout = 1; COMB Node = 'KEY[1]~clk_delay_ctrl'
+                Info: 3: + IC(0.000 ns) + CELL(0.000 ns) = 1.038 ns; Loc. = CLKCTRL_G4; Fanout = 32; COMB Node = 'KEY[1]~clkctrl'
+                Info: 4: + IC(0.930 ns) + CELL(0.660 ns) = 2.628 ns; Loc. = M4K_X52_Y10; Fanout = 1; MEM Node = 'PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg0'
+                Info: Total cell delay = 1.657 ns ( 63.05 % )
+                Info: Total interconnect delay = 0.971 ns ( 36.95 % )
+        Info: + Micro clock to output delay of source is 0.209 ns
+        Info: + Micro setup delay of destination is 0.035 ns
+Info: Clock "KEY[3]" has Internal fmax of 131.44 MHz between source register "IR:InstructionRegister|d[7]" and destination register "GR0_3:GeneralRegister0_3|R3[5]~latch" (period= 7.608 ns)
+    Info: + Longest register to register delay is 2.606 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X49_Y16_N21; Fanout = 85; REG Node = 'IR:InstructionRegister|d[7]'
+        Info: 2: + IC(0.000 ns) + CELL(2.062 ns) = 2.062 ns; Loc. = LCCOMB_X48_Y16_N20; Fanout = 2; COMB LOOP Node = 'GR0_3:GeneralRegister0_3|Mux78~0'
+            Info: Loc. = LCCOMB_X48_Y16_N28; Node "GR0_3:GeneralRegister0_3|R3[5]~head_lut"
+            Info: Loc. = LCCOMB_X48_Y16_N20; Node "GR0_3:GeneralRegister0_3|Mux78~0"
+        Info: 3: + IC(0.273 ns) + CELL(0.271 ns) = 2.606 ns; Loc. = LCCOMB_X48_Y16_N6; Fanout = 4; REG Node = 'GR0_3:GeneralRegister0_3|R3[5]~latch'
+        Info: Total cell delay = 2.333 ns ( 89.52 % )
+        Info: Total interconnect delay = 0.273 ns ( 10.48 % )
+    Info: - Smallest clock skew is -0.077 ns
+        Info: + Shortest clock path from clock "KEY[3]" to destination register is 2.636 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.862 ns) = 0.862 ns; Loc. = PIN_W26; Fanout = 94; CLK Node = 'KEY[3]'
+            Info: 2: + IC(0.091 ns) + CELL(0.155 ns) = 1.108 ns; Loc. = CLKDELAYCTRL_G7; Fanout = 1; COMB Node = 'KEY[3]~clk_delay_ctrl'
+            Info: 3: + IC(0.000 ns) + CELL(0.000 ns) = 1.108 ns; Loc. = CLKCTRL_G7; Fanout = 122; COMB Node = 'KEY[3]~clkctrl'
+            Info: 4: + IC(1.378 ns) + CELL(0.150 ns) = 2.636 ns; Loc. = LCCOMB_X48_Y16_N6; Fanout = 4; REG Node = 'GR0_3:GeneralRegister0_3|R3[5]~latch'
+            Info: Total cell delay = 1.167 ns ( 44.27 % )
+            Info: Total interconnect delay = 1.469 ns ( 55.73 % )
+        Info: - Longest clock path from clock "KEY[3]" to source register is 2.713 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.862 ns) = 0.862 ns; Loc. = PIN_W26; Fanout = 94; CLK Node = 'KEY[3]'
+            Info: 2: + IC(0.091 ns) + CELL(0.155 ns) = 1.108 ns; Loc. = CLKDELAYCTRL_G7; Fanout = 1; COMB Node = 'KEY[3]~clk_delay_ctrl'
+            Info: 3: + IC(0.000 ns) + CELL(0.000 ns) = 1.108 ns; Loc. = CLKCTRL_G7; Fanout = 122; COMB Node = 'KEY[3]~clkctrl'
+            Info: 4: + IC(1.068 ns) + CELL(0.537 ns) = 2.713 ns; Loc. = LCFF_X49_Y16_N21; Fanout = 85; REG Node = 'IR:InstructionRegister|d[7]'
+            Info: Total cell delay = 1.554 ns ( 57.28 % )
+            Info: Total interconnect delay = 1.159 ns ( 42.72 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Micro setup delay of destination is 0.871 ns
+    Info: Delay path is controlled by inverted clocks -- if clock duty cycle is 50%, fmax is divided by two
+Info: tsu for register "GR0_3:GeneralRegister0_3|QA[4]" (data pin = "KEY[3]", clock pin = "KEY[3]") is 7.390 ns
+    Info: + Longest pin to register delay is 10.105 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.862 ns) = 0.862 ns; Loc. = PIN_W26; Fanout = 94; CLK Node = 'KEY[3]'
+        Info: 2: + IC(0.000 ns) + CELL(6.442 ns) = 7.304 ns; Loc. = LCCOMB_X49_Y16_N10; Fanout = 3; COMB LOOP Node = 'GR0_3:GeneralRegister0_3|R1[4]~head_lut'
+            Info: Loc. = LCCOMB_X49_Y16_N10; Node "GR0_3:GeneralRegister0_3|R1[4]~head_lut"
+            Info: Loc. = LCCOMB_X48_Y16_N30; Node "GR0_3:GeneralRegister0_3|Mux67~0"
+        Info: 3: + IC(0.961 ns) + CELL(0.437 ns) = 8.702 ns; Loc. = LCCOMB_X49_Y16_N20; Fanout = 1; COMB Node = 'GR0_3:GeneralRegister0_3|Mux49~0'
+        Info: 4: + IC(1.048 ns) + CELL(0.271 ns) = 10.021 ns; Loc. = LCCOMB_X49_Y17_N24; Fanout = 1; COMB Node = 'GR0_3:GeneralRegister0_3|Mux49~1'
+        Info: 5: + IC(0.000 ns) + CELL(0.084 ns) = 10.105 ns; Loc. = LCFF_X49_Y17_N25; Fanout = 2; REG Node = 'GR0_3:GeneralRegister0_3|QA[4]'
+        Info: Total cell delay = 8.096 ns ( 80.12 % )
+        Info: Total interconnect delay = 2.009 ns ( 19.88 % )
+    Info: + Micro setup delay of destination is -0.036 ns
+    Info: - Shortest clock path from clock "KEY[3]" to destination register is 2.679 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.862 ns) = 0.862 ns; Loc. = PIN_W26; Fanout = 94; CLK Node = 'KEY[3]'
+        Info: 2: + IC(0.091 ns) + CELL(0.155 ns) = 1.108 ns; Loc. = CLKDELAYCTRL_G7; Fanout = 1; COMB Node = 'KEY[3]~clk_delay_ctrl'
+        Info: 3: + IC(0.000 ns) + CELL(0.000 ns) = 1.108 ns; Loc. = CLKCTRL_G7; Fanout = 122; COMB Node = 'KEY[3]~clkctrl'
+        Info: 4: + IC(1.034 ns) + CELL(0.537 ns) = 2.679 ns; Loc. = LCFF_X49_Y17_N25; Fanout = 2; REG Node = 'GR0_3:GeneralRegister0_3|QA[4]'
+        Info: Total cell delay = 1.554 ns ( 58.01 % )
+        Info: Total interconnect delay = 1.125 ns ( 41.99 % )
+Info: tco from clock "KEY[3]" to destination pin "HEX6[1]" through register "GR0_3:GeneralRegister0_3|QA[0]" is 11.677 ns
+    Info: + Longest clock path from clock "KEY[3]" to source register is 2.696 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.862 ns) = 0.862 ns; Loc. = PIN_W26; Fanout = 94; CLK Node = 'KEY[3]'
+        Info: 2: + IC(0.091 ns) + CELL(0.155 ns) = 1.108 ns; Loc. = CLKDELAYCTRL_G7; Fanout = 1; COMB Node = 'KEY[3]~clk_delay_ctrl'
+        Info: 3: + IC(0.000 ns) + CELL(0.000 ns) = 1.108 ns; Loc. = CLKCTRL_G7; Fanout = 122; COMB Node = 'KEY[3]~clkctrl'
+        Info: 4: + IC(1.051 ns) + CELL(0.537 ns) = 2.696 ns; Loc. = LCFF_X47_Y19_N3; Fanout = 14; REG Node = 'GR0_3:GeneralRegister0_3|QA[0]'
+        Info: Total cell delay = 1.554 ns ( 57.64 % )
+        Info: Total interconnect delay = 1.142 ns ( 42.36 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Longest register to pin delay is 8.731 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X47_Y19_N3; Fanout = 14; REG Node = 'GR0_3:GeneralRegister0_3|QA[0]'
+        Info: 2: + IC(0.907 ns) + CELL(0.393 ns) = 1.300 ns; Loc. = LCCOMB_X46_Y18_N8; Fanout = 1; COMB Node = 'bcd7seg:char7seg_A|Mux5~0'
+        Info: 3: + IC(4.799 ns) + CELL(2.632 ns) = 8.731 ns; Loc. = PIN_P4; Fanout = 0; PIN Node = 'HEX6[1]'
+        Info: Total cell delay = 3.025 ns ( 34.65 % )
+        Info: Total interconnect delay = 5.706 ns ( 65.35 % )
+Info: Longest tpd from source pin "SW[15]" to destination pin "LEDR[15]" is 9.855 ns
+    Info: 1: + IC(0.000 ns) + CELL(0.832 ns) = 0.832 ns; Loc. = PIN_U4; Fanout = 2; PIN Node = 'SW[15]'
+    Info: 2: + IC(6.225 ns) + CELL(2.798 ns) = 9.855 ns; Loc. = PIN_AE13; Fanout = 0; PIN Node = 'LEDR[15]'
+    Info: Total cell delay = 3.630 ns ( 36.83 % )
+    Info: Total interconnect delay = 6.225 ns ( 63.17 % )
+Info: th for memory "PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg0" (data pin = "SW[6]", clock pin = "KEY[1]") is 0.037 ns
+    Info: + Longest clock path from clock "KEY[1]" to destination memory is 2.628 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.842 ns) = 0.842 ns; Loc. = PIN_N23; Fanout = 1; CLK Node = 'KEY[1]'
+        Info: 2: + IC(0.041 ns) + CELL(0.155 ns) = 1.038 ns; Loc. = CLKDELAYCTRL_G4; Fanout = 1; COMB Node = 'KEY[1]~clk_delay_ctrl'
+        Info: 3: + IC(0.000 ns) + CELL(0.000 ns) = 1.038 ns; Loc. = CLKCTRL_G4; Fanout = 32; COMB Node = 'KEY[1]~clkctrl'
+        Info: 4: + IC(0.930 ns) + CELL(0.660 ns) = 2.628 ns; Loc. = M4K_X52_Y10; Fanout = 1; MEM Node = 'PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg0'
+        Info: Total cell delay = 1.657 ns ( 63.05 % )
+        Info: Total interconnect delay = 0.971 ns ( 36.95 % )
+    Info: + Micro hold delay of destination is 0.234 ns
+    Info: - Shortest pin to memory delay is 2.825 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.989 ns) = 0.989 ns; Loc. = PIN_AC13; Fanout = 2; PIN Node = 'SW[6]'
+        Info: 2: + IC(1.730 ns) + CELL(0.106 ns) = 2.825 ns; Loc. = M4K_X52_Y10; Fanout = 1; MEM Node = 'PM:ProgramMemory|altsyncram:RAMTMP_rtl_0|altsyncram_5se1:auto_generated|ram_block1a0~porta_datain_reg0'
+        Info: Total cell delay = 1.095 ns ( 38.76 % )
+        Info: Total interconnect delay = 1.730 ns ( 61.24 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 98 warnings
+    Info: Peak virtual memory: 203 megabytes
+    Info: Processing ended: Sat Jun 22 20:49:25 2019
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

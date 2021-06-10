@@ -1,0 +1,37 @@
+-- 
+
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY sel_accu IS
+	PORT(
+		A : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		B : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		Y : IN STD_LOGIC_VECTOR(5 DOWNTO 0);
+		S_Y : IN STD_LOGIC;
+		S_AB : IN STD_LOGIC;
+		QA : OUT STD_LOGIC_VECTOR(5 DOWNTO 0);
+		QB : OUT STD_LOGIC_VECTOR(5 DOWNTO 0)	
+	);
+END sel_accu;
+
+ARCHITECTURE behavioral OF sel_accu IS
+
+BEGIN
+	PROCESS(A, B, Y, S_Y, S_AB)
+	BEGIN
+		IF S_Y = '0' THEN
+			QA <= A;
+			QB <= B;
+		ELSE
+			IF S_AB = '0' THEN
+				QA <= Y;
+				QB <= B;
+			ELSE
+				QA <= A;
+				QB <= Y;
+			END IF;
+		END IF;
+	END PROCESS;
+
+END behavioral;

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sun Jun 23 20:56:59 2019
+Quartus II Version : 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition
+Revision Name : CPU_6bit
+Top-level Entity Name : CPU_6bit
+Family : Cyclone II
+Total logic elements : 102
+    Total combinational functions : 86
+    Dedicated logic registers : 38
+Total registers : 38
+Total pins : 102
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
